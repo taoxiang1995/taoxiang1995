@@ -10,3 +10,21 @@
   margin-right: 5%;
 
 }
+
+.card{
+  background-color: rgba(255,255,255,0)!important;
+  border: 1.4px solid rgba(255,255,255,1) !important;
+}
+
+.card-text{
+  color: white;
+}
+
+.card-title{
+  color:white;
+}
+
+.tutorialBtn{
+  border-color: white !important;
+  background-color: rgba(0,0,0,0.1) !important;
+}

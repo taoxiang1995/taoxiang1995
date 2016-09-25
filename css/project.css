@@ -41,13 +41,13 @@
 
 
 }
-.carousel-cell{
+.carousel-cell-project{
   height: 10px;
   border-radius: 0px !important;
   background: #333;
 }
 
-.carousel-cell : before {
+.carousel-cell-project : before {
   content :'' !important;
 }
 
@@ -56,7 +56,7 @@
   height: 100% !important;
 }
 
-.carousel{
+.carousel-project{
   background: #EEE;
 }
 
@@ -103,8 +103,8 @@
 }
 
 .disapper{
-  display: none;
-  /*position: absolute !important;
+  /*display: none;*/
+  position: absolute !important;
   top: -9999px !important;
-  left: -9999px !important;*/
+  left: -9999px !important;
 }
