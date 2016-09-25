@@ -1,0 +1,66 @@
+/* ---- grid ---- */
+.grid {
+  /*background: #DDD;*/
+
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .element-item ---- */
+
+/* 5 columns, percentage width */
+.grid-sizer,
+.grid-item {
+  width: 24%;
+}
+
+.grid-item {
+  float: left;
+  height: 20em;
+  background: #d0d3c5;
+  overflow: hidden;
+
+}
+
+.stoneColor {
+  background : #d0d3cd
+}
+
+.skyColor{
+  background: #56b1bf
+}
+
+.tealColor{
+  background: #0870ba
+}
+
+.tomatoColor{
+  background: #d73a31
+}
+
+.hunterColor{
+  background: #032b2f
+}
+
+.trOrangeColor{
+  background: #ff7e5f !important;
+}
+
+.noColor{
+  background: rgba(255,0,0,0)
+}
+
+.azulColor{
+    background: #a0c1b8;
+}
+
+
+.grid-item--width2 { width: 49%; height: 41em;}
+.grid-item--width4 { width: 99.2%; height: 41em;}
+.grid-item--width4-short { width: 99.2%; height: 20em;}
+.grid-item--height2 { height: 200px; }
