@@ -29,7 +29,7 @@ $(".close-modal").click(function(){
   $(".mainContent").removeClass('blur')
 })
 
-$(".grid-item img").mouseenter(function(){
+$(".projectImg").mouseenter(function(){
   //$(this).addClass('scaleImg');
    $(this).animate({
      width:'200%',

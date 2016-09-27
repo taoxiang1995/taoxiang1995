@@ -5,27 +5,9 @@
 body { font-family: sans-serif; }
 
 
-
-.carouselComment{
+.commentItem{
+  background-color: #032b2f;
   height: 500px;
-}
-
-.carousel-cell {
-  width: 100%;
-  height: 100%;
-  /*margin-right: 10px;*/
-  background: #032b2f;
-  counter-increment: carousel-cell;
-}
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
 }
 
 #comment{
@@ -35,7 +17,7 @@ body { font-family: sans-serif; }
 .comment1{
   color: white;
 
-
+  padding-top:5%;
   top:18%;
   margin-left: 8%;
   margin-right: 8%;
@@ -44,7 +26,6 @@ body { font-family: sans-serif; }
 .quote{
   font-size: 60px;
   text-align: center;
-
 }
 
 .name{

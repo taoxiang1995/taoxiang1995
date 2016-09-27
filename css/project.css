@@ -4,6 +4,13 @@
   padding-top: 0em;
 }
 
+.carousel-inner{
+  height: 100%;
+}
+
+.item{
+  height: 100%;
+}
 .projectTitle{
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.9em;
@@ -40,24 +47,6 @@
 {
 
 
-}
-.carousel-cell-project{
-  height: 10px;
-  border-radius: 0px !important;
-  background: #333;
-}
-
-.carousel-cell-project : before {
-  content :'' !important;
-}
-
-.flickity-viewport
-{
-  height: 100% !important;
-}
-
-.carousel-project{
-  background: #EEE;
 }
 
 .modal-content
@@ -103,8 +92,8 @@
 }
 
 .disapper{
-  /*display: none;*/
-  position: absolute !important;
+  display: none;
+  /*position: absolute !important;
   top: -9999px !important;
-  left: -9999px !important;
+  left: -9999px !important;*/
 }
