@@ -61,12 +61,17 @@ $(".projectTitle").mouseleave(function(){
 
 
 var selectedSectionClass='';
+var currentSectionTabClass='.ProjectsTab';
 var currentSectionClass='.Projects';
 
 $(".projectTitle").click(function(){
   console.log("!!!!");
   // console.log($(this).text());
   selectedSectionClass = '.'+$(this).text();
+  selectedSectionTabClassName = '.'+$(this).text()+'Tab';
+  $(currentSectionTabClass).removeClass('currentTab');
+  currentSectionTabClass = selectedSectionTabClassName;
+  $(selectedSectionTabClassName).addClass('currentTab');
   if (selectedSectionClass == '.Experiences')
   {
     document.getElementById("iframe").contentWindow.focus();
