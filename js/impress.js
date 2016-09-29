@@ -32,6 +32,8 @@
     // The code is heavily inspired by Modernizr http://www.modernizr.com/
     var pfx = ( function() {
 
+
+
         var style = document.createElement( "dummy" ).style,
             prefixes = "Webkit Moz O ms Khtml".split( " " ),
             memory = {};

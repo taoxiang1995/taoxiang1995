@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="css/experience.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="impress" class="display">
+
+    <div id="bored" class="step" data-x="1000" data-y="1000" data-scale="4">
+
+        <img src="img/thomsonreutersLogo.png"></img>
+        <div class="divider"></div>
+        <div class="content">
+            <div class="title">
+              <p>ThomsonReuters</p>
+            </div>
+            <div class="time">
+              <p >Full Stack Engineer Intern</p>
+            </div>
+            <div class="time">
+              <p >June 2016 - August 2016</p>
+            </div>
+
+            <div class="bulletPoints">
+              <ul>
+                <li>Designed and implemented three search applications using React.js and Kendo UI.</li>
+                <li>Improved search engine performance from minutes to seconds using Elastic Search </li>
+                <li>Implemented a universal search plugin by using Angular2</li>
+                <li>Used Jest to conduct unit test for existing UI to ensure current page is testable and maintainable. </li>
+              </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="step" data-x="1000" data-y="-1000" data-rotate="90">
+      <img class="yanset-img" src="img/yanset.png"></img>
+      <div class="divider-yanset"></div>
+      <div class="content-yanset">
+          <div class="title">
+            <p>YANSET</p>
+          </div>
+          <div class="time">
+            <p>Front-end Web Developer Intern</p>
+          </div>
+          <div class="time">
+            <p>May 2016 - Present</p>
+          </div>
+
+          <div class="bulletPoints">
+            <ul>
+              <li>Design an expenses calculator  useing Sketch to complete wireframe and user interface.</li>
+              <li>Implement clean and organized web pages by using React.js, react router and semantic UI.</li>
+              <li>Lead a team of designer, engineer and data analyst to develop a large-scale feature of an enterprise SaaS system.</li>
+            </ul>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="step" data-x="-1000" data-y="1000">
+      <img class="bluray-img" src="img/blu-ray.jpg"></img>
+      <div class="divider-bluray"></div>
+      <div class="content-bluray">
+          <div class="title">
+            <p>Blu-ray</p>
+          </div>
+          <div class="time">
+            <p>Web developer Intern</p>
+          </div>
+          <div class="time">
+            <p>Sept 2015 - Dec 2015</p>
+          </div>
+
+          <div class="bulletPoints">
+            <ul>
+              <li>Maintained Blu-ray official website on a weekly basis. </li>
+              <li>Created a new page section to display Blu-ray convention and tech talk by using XML and Adobe Flash</li>
+              <li>Made website responsive to different browsers and customized functions to accommodate client’s needs</li>
+              <li>Designed new packshot for movies using Photoshop and Dreamweaver. Generated new video trailer by using Media Encoder. </li>
+            </ul>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="step" data-x="-1000" data-y="-1000" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+      <img class="bluray-img" src="img/asucla.jpg"></img>
+      <div class="divider-bluray"></div>
+      <div class="content-bluray">
+          <div class="title">
+            <p>ASUCLA</p>
+          </div>
+          <div class="time">
+            <p>Web Master</p>
+          </div>
+          <div class="time">
+            <p>Jan 2016 - Present</p>
+          </div>
+
+          <div class="bulletPoints">
+            <ul>
+              <li>Develop and supervise a team of student engineers for UCLA Undergraduate Student Association Funding web application with front end (HTML5, CSSe, JavaScript) and back end (PHP, MySQL). </li>
+              <li>Conduct research to find solutions for optimization of user experience for a fund raising web application. </li>
+              <li>Provide technical support and serve as a Windows system and network security administrator.    </li>
+            </ul>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="js/impress.js"></script>
+
+  <script type="text/javascript">
+    var api = impress();
+    api.init();
+    
+    setInterval(function(){
+      api.next();
+    }, 3500)
+  </script>
+</body>
+
+</html>

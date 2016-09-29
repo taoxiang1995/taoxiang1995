@@ -1,0 +1,98 @@
+.display{
+  font-size: 100px;
+  color: white;
+}
+
+img{
+  width: 150px;
+  height: 150px;
+  top: 200px;
+  position: relative;
+  right: 250px;
+}
+
+.divider{
+  border-color: white;
+  border-width: 2px;
+  height: 400px;
+  width: 0px;
+  border-style: solid;
+  position: relative;
+  top: 15px;
+  right: 30px;
+}
+
+.content{
+  font-size: 50px;
+  position: relative;
+  bottom: 450px;
+  left: 50px;
+  width: 200%;
+}
+
+.title{
+  width: 200%;
+}
+
+.time{
+  font-size: 30px;
+}
+
+.bulletPoints{
+  font-size: 18px;
+}
+
+.content-yanset{
+  font-size: 50px;
+  position: relative;
+  bottom: 420px;
+  left: 120px;
+  width: 200%;
+}
+
+.divider-yanset{
+  border-color: white;
+  border-width: 2px;
+  height: 400px;
+  width: 0px;
+  border-style: solid;
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
+
+.yanset-img{
+  width: 280px;
+  height: 150px;
+  top: 200px;
+  position: relative;
+  right: 300px;
+}
+
+.bluray-img
+{
+  width: 280px;
+  height: 150px;
+  top: 200px;
+  position: relative;
+  right: 300px;
+}
+
+.divider-bluray{
+  border-color: white;
+  border-width: 2px;
+  height: 400px;
+  width: 0px;
+  border-style: solid;
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
+
+.content-bluray{
+  font-size: 50px;
+  position: relative;
+  bottom: 440px;
+  left: 120px;
+  width: 200%;
+}

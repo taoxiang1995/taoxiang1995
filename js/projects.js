@@ -67,6 +67,10 @@ $(".projectTitle").click(function(){
   console.log("!!!!");
   // console.log($(this).text());
   selectedSectionClass = '.'+$(this).text();
+  if (selectedSectionClass == '.Experiences')
+  {
+    document.getElementById("iframe").contentWindow.focus();
+  }
   // console.log("slectedSectionClass:",selectedSectionClass);
   $(currentSectionClass).addClass('navTransitionEffect');
   $(currentSectionClass).one($.support.transition.end,

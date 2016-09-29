@@ -1,7 +1,7 @@
 #projects
 {
   background-color: #032b2f;
-  padding-top: 0em;
+  padding-top: 1em;
 }
 
 .carousel-inner{
@@ -24,6 +24,9 @@
 
 .navigation{
   margin-top: 100px;
+  background-color:#032b2f !important;
+  opacity: 0.86;
+
 }
 
 .ProjectContainer{
