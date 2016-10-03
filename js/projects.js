@@ -87,3 +87,14 @@ $(".projectTitle").click(function(){
       });
 
 })
+
+
+
+//fix nav bar
+$('.mainContent').on('scroll', function(e){
+  if (this.scrollTop > 147) {
+    console.log("=====>");
+  } else {
+    console.log("-=====>");
+  }
+})
