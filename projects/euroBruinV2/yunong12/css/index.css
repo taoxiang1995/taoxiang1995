@@ -1,0 +1,48 @@
+@font-face {
+	font-family: BebasNeueRegular;
+	src: url("../fonts/BebasNeue-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: BebasNeueBold;
+	src: url("../fonts/BebasNeue-Bold.otf") format("opentype");
+}
+
+body {
+	color: white;
+	position: relative;
+	background-image: url('../Laughing.jpg');
+	background-size: cover;
+}
+
+.navibar {
+	background: transparent;
+}
+
+#title {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	left: 50%;
+	top: 50%;
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#title h1, #title h3 {
+	font-family: BebasNeueRegular;
+	margin: 0;
+}
+
+#title h1 {
+	font-weight: bold;
+	font-size: 100px;
+	letter-spacing: 25px;
+}
+
+#title h3 {
+	margin-bottom: 15px;
+	font-size: 50px;
+	letter-spacing: 10px;
+}

@@ -1,0 +1,42 @@
+@font-face {
+	font-family: BebasNeueRegular;
+	src: url("../fonts/BebasNeue-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: BebasNeueBold;
+	src: url("../fonts/BebasNeue-Bold.otf") format("opentype");
+}
+
+.navibar {
+	font-family: BebasNeueRegular, 'sans serif';
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+	font-size: 25px;
+	margin-top: 25px;
+	letter-spacing: 5px;
+	background: rgba(0,0,0,0.5);
+}
+
+.navibar li {
+	display: inline-block;
+	margin-right: 25px;
+}
+
+.navibar a {
+	text-decoration: none;
+	-webkit-transition: 0.7s;
+	transition: 0.7s;
+}
+
+	.navibar li a:hover {
+		color: white;
+		-webkit-transition: 0.7s;
+		transition: 0.7s;
+	}
+
+	.navibar a:link, .navibar a:visited {
+		color: rgba(255,255,255,0.7);
+	}

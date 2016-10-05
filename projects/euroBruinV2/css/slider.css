@@ -1,0 +1,338 @@
+#sectionSeasons {
+    height: 100%;
+    width: 100%;
+}
+
+#seasonSlider > div video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    object-fit: cover;
+}
+
+/*#seasonSlider > div {
+    position: absolute;
+}*/
+
+#seasonSliderControls {
+    position: absolute;
+    bottom: 550px;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    align-items: center;
+}
+
+    #seasonSliderControls > div#selector {
+        height: 17px;
+        width: 17px;
+        opacity: 1;
+        position: absolute;
+        left: 0px;
+        top: -2px;
+    }
+
+
+    .slider {
+        height: 15px;
+        width: 15px;
+        background-color: white;
+        border-radius: 100%;
+        float: left;
+        margin: 10px;
+        opacity: 0.5;
+        cursor: pointer;
+
+    }
+
+    .slider:hover{
+      opacity: 0.999;
+
+    }
+
+        #seasonSliderControls > div.active {
+            height: 17px;
+            width: 17px;
+            margin: 8px;
+            opacity: 1;
+        }
+
+
+#seasonTextSlider {
+    position:absolute;
+    top:220px;
+    width:60px;
+}
+
+    #seasonTextSlider > div#selectorSeason {
+        height: 17px;
+        width: 17px;
+        opacity: 1;
+        position: absolute;
+        left: 0px;
+        top: -2px;
+    }
+
+
+    #seasonTextSlider > div {
+        height: 10px;
+        width: 10px;
+        background-color: white;
+        border-radius: 100%;
+        float: left;
+        margin: 10px;
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+        #seasonTextSlider > div.active {
+            height: 14px;
+            width: 14px;
+            margin: 8px;
+            opacity: 1;
+        }
+
+.seasonTextContainer {
+    font-family: BebasNeue;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    width: 25%;
+    color: white;
+    z-index: 100;
+    letter-spacing: 15px;
+}
+
+
+    .seasonTextContainer > div > div {
+        font-size:60px;
+        height:200px;
+        width:20%;
+        display: table-cell;
+        vertical-align:bottom;
+        overflow:hidden;
+    }
+    .seasonTextContainer > div {
+        width:100%;
+    }
+
+    .seasonTextContainer .textLine {
+        width: 25px;
+        height: 5px;
+        background: white;
+        margin-bottom: 25px;
+    }
+
+
+    .seasonTextContainer p {
+        margin: 0;
+        font-family: BPG DejaVu Bold Caps;
+        font-weight: bold;
+        font-size: 25px;
+        margin: 10px 0;
+    }
+
+    .seasonTextContainer .textSinus {
+        margin-top: 15px;
+        background: url(../img/arrows.png) no-repeat scroll -11px transparent;
+        width: 122px;
+        height: 25px;
+    }
+
+    .seasonTextContainer #textArrowFirst {
+        background: url(../img/arrows.png) no-repeat scroll -165px transparent;
+        width: 40px;
+        height: 25px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    .seasonTextContainer #textArrowSecond {
+        background: url(../img/arrows.png) no-repeat scroll -127px transparent;
+        width: 40px;
+        height: 25px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+
+#sectionSeasonTiles {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#tileContainerWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    #tileContainerWrapper > .tileContainer {
+        height: 100%;
+        width: 400%;
+    }
+
+        #tileContainerWrapper > .tileContainer > div {
+            height: 100%;
+            width: 8%;
+            float: left;
+            background-size: auto 100%;
+            background-position-x: center;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+            #tileContainerWrapper > .tileContainer > div:hover > div {
+                opacity: 1;
+            }
+
+            #tileContainerWrapper > .tileContainer > div:hover {
+                width: 9%;
+            }
+
+/*#tileContainerWrapper > .tileContainer > div#tile1:hover {
+                background-image: url('../img/seasonTiles/t1.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile2:hover {
+                background-image: url('../img/seasonTiles/t2.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile3:hover {
+                background-image: url('../img/seasonTiles/t3.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile4:hover {
+                background-image: url('../img/seasonTiles/t4.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile5:hover {
+                background-image: url('../img/seasonTiles/t5.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile6:hover {
+                background-image: url('../img/seasonTiles/t6.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile7:hover {
+                background-image: url('../img/seasonTiles/t7.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile8:hover {
+                background-image: url('../img/seasonTiles/t8.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile9:hover {
+                background-image: url('../img/seasonTiles/t9.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile10:hover {
+                background-image: url('../img/seasonTiles/t10.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile11:hover {
+                background-image: url('../img/seasonTiles/t11.jpg')!important;
+            }
+
+            #tileContainerWrapper > .tileContainer > div#tile12:hover {
+                background-image: url('../img/seasonTiles/t12.jpg')!important;
+            }*/
+
+#sectionSeasonTiles .tilesScrollBar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    width: 1000px;
+    height: 5px;
+    margin: auto;
+    border-radius: 5px;
+    background: url('../img/transparentBg.png');
+}
+
+    #sectionSeasonTiles .tilesScrollBar > div {
+        opacity: 1;
+        width: 600px;
+        height: 5px;
+        background-color: white;
+        border-radius: 5px;
+        cursor: move;
+        position: inherit;
+    }
+
+.tileText {
+    color: white;
+    /*margin-top: 60%;
+    margin-left: 20%;*/
+    opacity: 0.5;
+    position: relative;
+    bottom: -50%;
+    width: 500px;
+    margin-left: 50px;
+    left: 20px;
+}
+
+    .tileText .tileTextNumber {
+        font-family: BPG DejaVu Bold Caps;
+        font-weight: bold;
+        font-size: 4vw;
+        width: 50%;
+        color: white;
+        line-height: 4vw;
+    }
+
+    .tileText h1 {
+        font-family: BPG DejaVu Bold Caps;
+        font-weight: bold;
+        font-size: 1.5vw;
+        width: 50%;
+        color: white;
+        line-height: 2vw;
+    }
+
+    .tileText p {
+        font-family: BPG DejaVu Sans;
+        font-size: 1vw;
+        color: white;
+        line-height: 1.2vw;
+        width: 50%;
+    }
+
+#seasonsViewToggler {
+    position: fixed;
+    top: 50px;
+    right: 100px;
+    height: 30px;
+    width: 30px;
+    background: url(../img/menuSprite.png) no-repeat scroll transparent;
+    background-position: -87px -1px;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 500;
+}
+
+    #seasonsViewToggler:hover {
+        opacity: 1;
+    }
+
+#fbShare {
+    background: url(../img/fb.png) no-repeat scroll 15px transparent;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    border: 1px solid white;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    z-index: 400;
+}

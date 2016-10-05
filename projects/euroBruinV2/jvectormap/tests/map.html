@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%">
+<head>
+  <title>EuroBruins Map</title>
+  <link rel="stylesheet" media="all" href="../jquery-jvectormap.css"/>
+  <link rel="stylesheet" media="all" href="../../css/normal.css"/>
+  <link rel="stylesheet" media="all" href="../../css/commonStyles.css"/>
+  <link rel="stylesheet" media="all" href="../../css/map.css"/>
+  <script src="assets/jquery-1.8.2.js"></script>
+  <script src="../jquery-jvectormap.js"></script>
+  <script src="../lib/jquery-mousewheel.js"></script>
+
+  <script src="../src/jvectormap.js"></script>
+
+  <script src="../src/abstract-element.js"></script>
+  <script src="../src/abstract-canvas-element.js"></script>
+  <script src="../src/abstract-shape-element.js"></script>
+
+  <script src="../src/svg-element.js"></script>
+  <script src="../src/svg-group-element.js"></script>
+  <script src="../src/svg-canvas-element.js"></script>
+  <script src="../src/svg-shape-element.js"></script>
+  <script src="../src/svg-path-element.js"></script>
+  <script src="../src/svg-circle-element.js"></script>
+  <script src="../src/svg-image-element.js"></script>
+  <script src="../src/svg-text-element.js"></script>
+
+  <script src="../src/vml-element.js"></script>
+  <script src="../src/vml-group-element.js"></script>
+  <script src="../src/vml-canvas-element.js"></script>
+  <script src="../src/vml-shape-element.js"></script>
+  <script src="../src/vml-path-element.js"></script>
+  <script src="../src/vml-circle-element.js"></script>
+  <script src="../src/vml-image-element.js"></script>
+
+  <script src="../src/map-object.js"></script>
+  <script src="../src/region.js"></script>
+  <script src="../src/marker.js"></script>
+
+  <script src="../src/vector-canvas.js"></script>
+  <script src="../src/simple-scale.js"></script>
+  <script src="../src/numeric-scale.js"></script>
+  <script src="../src/ordinal-scale.js"></script>
+  <script src="../src/color-scale.js"></script>
+  <script src="../src/data-series.js"></script>
+  <script src="../src/proj.js"></script>
+  <script src="../src/map.js"></script>
+  <script src="../src/multimap.js"></script>
+
+  <script src="../jquery-jvectormap-europe-mill.js"></script>
+  <script>
+    $(function(){
+      var multimap = new jvm.MultiMap({
+        container: $('#map'),
+        maxLevel: 1,
+        main: {
+          map: 'europe_mill',
+          backgroundColor: 'white',
+          zoomMin: 1.8,
+          focusOn: {
+            x: 0.5,
+            y: 0.5,
+            animate: true,
+            scale: 1.7
+          },
+          regionStyle: {
+            initial: {
+              fill: '#949699',
+              "fill-opacity": 0.4,
+              stroke: '#888888',
+              "stroke-width": 1,
+              "stroke-opacity": 0.6
+            },
+            hover: {
+              "fill-opacity": 1,
+              cursor: 'pointer',
+              "stroke-opacity": 1
+            }
+          },
+          regionLabelStyle: {
+            initial: {
+              'font-family': "BebasNeueRegular",
+              'font-size': '20',
+              cursor: 'default',
+              fill: 'rgba(0,0,0,0.8)'
+            },
+            hover: {
+              cursor: 'pointer'
+            }
+          },
+          markers: [
+            {latLng: [51.5287718,-0.2416814], name: 'London EuroBruins: 21', style: {r: 15, fill: '#666666'}},
+            {latLng: [53.4723272,-2.2936318], name: 'Manchester EuroBruins: 10', style: {r: 8, fill: '#666666'}}
+          ]
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <ul class='navibar'>
+    <li><a href='#'>About</a></li>
+    <li><a href='jvectormap/tests/map.html'>Map</a></li>
+    <li><a href='#'>Gallery</a></li>
+    <li><a href='#'>Blog</a></li>
+  </ul>
+  <div id="map" style="width: 100%; height: 100%"></div>
+</body>
+</html>
