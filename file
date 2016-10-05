@@ -1,0 +1,10 @@
+{
+    "ServerCertificateMetadata": {
+        "ServerCertificateId": "AS5YBEIONO2Q7CAIHKNGC",
+        "ServerCertificateName": "elastic-beanstalk-x509",
+        "Expiration": "2017-01-31T23:06:22Z",
+        "Path": "/",
+        "Arn": "arn:aws:iam::123456789012:server-certificate/elastic-beanstalk-x509",
+        "UploadDate": "2016-02-01T23:10:34.167Z"
+    }
+}

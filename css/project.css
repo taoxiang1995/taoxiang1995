@@ -105,3 +105,11 @@
 .currentTab{
   color: white !important;
 }
+
+
+.iframe{
+  width: 180% !important;
+  right: 0px;
+  position: relative;
+  right: 40%;
+}
