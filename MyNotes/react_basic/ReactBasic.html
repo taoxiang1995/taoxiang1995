@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="85.80818939208984"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-07-31 18:37:08 +0000"/><meta name="latitude" content="34.05401820426036"/><meta name="longitude" content="-118.4406741830722"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-08-24 06:26:30 +0000"/><title>React | Basic</title></head><body>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Can render function return multiple components?</span></div>
+<div>A</div>
+<div>No, it can not.</div>
+<div>render function can only return one single component.</div>
+<div>What is we want to have multiple components be returned?</div>
+<div>Wrap it up with a parent component,</div>
+<div>in React, using &lt;div&gt;</div>
+<div>in React Native, using &lt;View&gt;</div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to import code in one file and use it in another file?</span></div>
+<div>A</div>
+<div>=&gt;In ES6 (Ecmascript 2015)</div>
+<div><span style="color: rgb(4, 51, 255);">//in foo.js file</span></div>
+<div><span style="color: rgb(4, 51, 255);">export function add (){</span></div>
+<div><span style="color: rgb(4, 51, 255);">     return 1;</span></div>
+<div><span style="color: rgb(4, 51, 255);">}</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">export function subtract(){</span></div>
+<div><span style="color: rgb(4, 51, 255);">     return 0;</span></div>
+<div><span style="color: rgb(4, 51, 255);">}</span></div>
+<div><span style="color: rgb(4, 51, 255);">//in bar.js file</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">import {add, subtract} from './foo'</span></div>
+<div><span style="color: rgb(4, 51, 255);">add(); //return 1</span></div>
+<div><span style="color: rgb(4, 51, 255);">subtract(); //return 0</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">//in bar.js file</span></div>
+<div><span style="color: rgb(4, 51, 255);">import *  as foo from './foo'</span></div>
+<div>
+<div><span style="color: rgb(4, 51, 255);">foo.add(); //return 1</span></div>
+</div>
+<div><span style="color: rgb(4, 51, 255);">foo.subtract(); //return 0</span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Since fat arrow function preserve scope, what cope does it preserve?</span></div>
+<div>A</div>
+<div>It preserve the scope of its calling function:</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">When we need to set multiple state in react component, is there any syntax sugar for that?</span></div>
+<div>A</div>
+<div>=&gt;Yes</div>
+<div>=&gt;we can combine all the states we need to change into one object and pass it to setState function:</div>
+<div>Ex:</div>
+<div><span style="color: rgb(4, 51, 255);">var stateToBeSet = {</span></div>
+<div><span style="color: rgb(4, 51, 255);">     state1 : val1,</span></div>
+<div><span style="color: rgb(4, 51, 255);">     state2 : val2,</span></div>
+<div><span style="color: rgb(4, 51, 255);">     state3 : val3 </span></div>
+<div><span style="color: rgb(4, 51, 255);">}</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">this.setState(stateToBeSet);</span></div>
+<div><br/></div>
+<div>=&gt;In this case, state1, state2, and state3 will be updated without affecting other states. </div>
+<div><br/></div>
+<div><span style="font-size: 24px;"><b>JSX</b></span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What can be used in JSX?</span></div>
+<div>A</div>
+<div><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Roboto, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(249, 249, 249);">JSX is just syntactic sugar for function calls and object construction.</span></div>
+<div>=&gt;we can make function call, variables and <span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Roboto, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(249, 249, 249);">ternary expression</span></div>
+<div>=&gt;We CAN NOT USE if-else statement in JSX!!</div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><b><span style="font-size: 24px;">Fetch API</span></b></div>
+<div><br/></div>
+<div>Fetch api is built in with react native</div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:18.561001042752867%;">
+<div>GET request</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:81.33472367049009%;">
+<div>
+<div style="padding: 20px 0px !important; border-width: 1px 0px; border-top-style: solid; border-bottom-style: solid; border-top-color: rgb(238, 238, 238); border-bottom-color: rgb(238, 238, 238); font-size: 16px; tab-size: 4; color: rgb(0, 0, 0); text-shadow: rgb(255, 255, 255) 0px 1px; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; word-spacing: 0px; overflow: auto; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: 0.16px; orphans: auto; text-indent: 0px; text-transform: none; widows: 1; -webkit-text-stroke-width: 0px; background: rgb(245, 242, 240);">
+<div><span style="padding: 0px; border: 0px; color: rgb(221, 74, 104);">fetch</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">(</span><span style="padding: 0px; border: 0px; color: rgb(102, 153, 0);">'<a href="https://davidwalsh.name/some/url">https://davidwalsh.name/some/url</a>'</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">)</span></div>
+<div><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">    .</span><span style="padding: 0px; border: 0px; color: rgb(221, 74, 104);">then</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">(</span><span style="padding: 0px; border: 0px; color: rgb(0, 119, 170);">function</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">(</span>response<span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">)</span> <span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">{</span></div>
+<div>      return response.json </div>
+<div><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">    }</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">)</span></div>
+<div><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">    .</span><span style="padding: 0px; border: 0px; color: rgb(0, 119, 170);">catch</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">(</span><span style="padding: 0px; border: 0px; color: rgb(0, 119, 170);">function</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">(</span>err<span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">)</span> <span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">{</span></div>
+        <span style="padding: 0px; border: 0px; color: rgb(112, 128, 144);">// Error :(</span><br/>
+<span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">    }</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">)</span><span style="padding: 0px; border: 0px; color: rgb(153, 153, 153);">;</span><br/></div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>POST request</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">fetch<span style="box-sizing: border-box; border: none; padding: 0px;">(</span></span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'<a rev="en_rl_minimal" href="https://mywebsite.com/endpoint/">https://mywebsite.com/endpoint/</a>'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">{</span> <span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">method</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">:</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'POST'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span> <span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">headers</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">:</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">{</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'Accept'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">:</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'application/json'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'Content-Type'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">:</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'application/json'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span> <span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">body</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">:</span> <span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">JSON</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">.</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">stringify<span style="box-sizing: border-box; border: none; padding: 0px;">(</span></span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">{</span> <span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">firstParam</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">:</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'yourValue'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span> <span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">secondParam</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">:</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'yourOtherValue'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Because of the security concerns, IOS will not support http request by default, how to allow http request?</span></div>
+<div>A</div>
+<div>Adding this code snippet under: &lt;key&gt;NSExceptionDomains&lt;/key&gt; in info.plist file</div>
+<div><span style="color: rgb(4, 51, 255);">&lt;key&gt;openweathermap.org&lt;/key&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">      &lt;dict&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">        &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">        &lt;true/&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">        &lt;key&gt;NSExceptionAllowsInsecureHTTPLoads&lt;/key&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">        &lt;true/&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">      &lt;/dict&gt;</span></div>
+<div>=&gt; When we change the info.plist file, we need to recompile the whole project in Xcode, not just only reload the simulator.</div>
+<div><br/></div>
+<div>Q</div>
+<div><br/></div>
+<div><br/></div>
+<div><b><span style="font-size: 24px;">Export &amp; Import</span></b></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to export a class, variable or a function?</span></div>
+<div>A</div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:26.903023983315954%;">
+<div>Export some variables, functions and classes</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:72.99270072992701%;">
+<div>
+<pre style="padding: 15px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(85, 138, 187); font-size: 14px; color: rgb(77, 78, 83); overflow: auto; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, monospace; font-weight: normal; tab-size: 4; hyphens: none; white-space: pre-wrap; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(221, 228, 233);">
+export { <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name1</var>, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name2</var>, …, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">nameN</var> };
+export { <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">variable1</var> as <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name1</var>, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">variable2</var> as <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name2</var>, …, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">nameN</var> };
+export let <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name1</var>, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name2</var>, …, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">nameN</var>; // also var
+export let <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name1</var> = …, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name2</var> = …, …, <var style=" padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">nameN</var>; // also var, const
+
+</pre></div>
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Export default</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>
+<div style="padding: 15px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(85, 138, 187); font-size: 14px; color: rgb(77, 78, 83); overflow: auto; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, monospace; font-weight: normal; tab-size: 4; hyphens: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(221, 228, 233);">export default <em style="padding: 0px; border: 0px;">expression</em>;<br/>
+export default function (…) { … } // also class, function*<br/>
+export default function name1(…) { … } // also class, function*<br/>
+export { <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name1</var> as default, … };<br/></div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>export from another file</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>
+<div style="padding: 15px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(85, 138, 187); font-size: 14px; color: rgb(77, 78, 83); overflow: auto; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, monospace; font-weight: normal; tab-size: 4; hyphens: none; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(221, 228, 233);">export * from …;<br/>
+export { <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name1</var>, <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name2</var>, …, <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">nameN</var> } from …;<br/>
+export { <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">import1</var> as <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name1</var>, <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">import2</var> as <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">name2</var>, …, <var style="padding: 0px; border: 0px; font-style: italic; font-weight: inherit;">nameN</var> } from …;<br/></div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>import </div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>
+<pre style="padding: 15px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(85, 138, 187); font-size: 14px; color: rgb(77, 78, 83); overflow: auto; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, monospace; font-weight: normal; tab-size: 4; hyphens: none; white-space: pre-wrap; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(221, 228, 233);">
+import <em style=" padding: 0px; border: 0px;">defaultMember</em> from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import * as <em style=" padding: 0px; border: 0px;">name</em> from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import { <em style=" padding: 0px; border: 0px;">member </em>} from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import { <em style=" padding: 0px; border: 0px;">member</em> as <em style=" padding: 0px; border: 0px;">alias </em>} from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import { <em style=" padding: 0px; border: 0px;">member1 , member2</em> } from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import { <em style=" padding: 0px; border: 0px;">member1 , member2</em> as <em style=" padding: 0px; border: 0px;">alias2</em> , <em style=" padding: 0px; border: 0px;">[...]</em> } from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import <em style=" padding: 0px; border: 0px;">defaultMember</em>, { <em style=" padding: 0px; border: 0px;">member</em> [ , <em style=" padding: 0px; border: 0px;">[...]</em> ] } from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import <em style=" padding: 0px; border: 0px;">defaultMember</em>, * as <em style=" padding: 0px; border: 0px;">name</em> from "<em style=" padding: 0px; border: 0px;">module-name</em>";
+import "<em style=" padding: 0px; border: 0px;">module-name</em>";
+</pre>
+<div style="padding: 0px; border: 0px; color: rgb(77, 78, 83); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+<div style="margin-left:40px;"><br/></div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div>We need web pack to bundle everything together. So ignored to use import and export, we need to have module bundler. </div>
+<div>If we put the file out side the scope of module bundler, it wont work. </div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is javascript module?</span></div>
+<div>A</div>
+<div><a href="https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.tx7o6b5mp" rev="en_rl_small">https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.tx7o6b5mp</a></div>
+<div><b><br/></b></div>
+<div><span style="font-size: 36px;"><b>Style</b></span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to add inline style to react?</span></div>
+<div>A</div>
+<div><i><b>(1) Create a style object</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">style = {</span></div>
+<div><span style="color: rgb(4, 51, 255);">    "margin-top":"10px"</span></div>
+<div><span style="color: rgb(4, 51, 255);">  };</span></div>
+<div><i><b>(2) assign it to style attribute</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">  &lt;div style={ this.style } className="ui container"&gt;</span></div>
+<div><br/></div>
+<div>a</div>
+</body></html>

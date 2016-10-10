@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="95"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-08-29 19:36:59 +0000"/><meta name="latitude" content="34.05792204553544"/><meta name="longitude" content="-118.4433551078192"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-09-04 04:37:18 +0000"/><title>React | React-Redux</title></head><body>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the difference between presentational component and container component?</span></div>
+<div>A</div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:21.584984358706986%;">
+<div>Presentational Component</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:78.31074035453598%;">
+<div>=&gt;Concerned with how things look</div>
+<div>=&gt;No dependencies on the rest of the app (no actions or store dependency)</div>
+<div>=&gt;Receive data exclusively from this.props.</div>
+<div>=&gt;Rarely have its own state, (can have UI state)</div>
+<div>=&gt;written as functional component</div>
+<div>=&gt;have DOM markup and its own state.</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Container Component</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;Concerned with how things work</div>
+<div>=&gt;Can have some wrapping divs but no style</div>
+<div>=&gt;Provide data to presentational component or other container component via props. </div>
+<div>=&gt;Call actions.</div>
+<div>=&gt;Generated using higher order component.</div>
+<div>=&gt;are often statefull.</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<table style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; border-collapse: collapse; border-spacing: 0px; overflow: auto; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<thead style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased;">
+<tr style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255);">
+<th style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: left;"><br/>
+Presentational Components</th>
+<th style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: left;">Container Components</th>
+</tr>
+</thead>
+<tr style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255);">
+<th style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: right;">Purpose</th>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">How things look (markup, styles)</td>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">How things work (data fetching, state updates)</td>
+</tr>
+<tr style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; border-top: 1px solid rgb(204, 204, 204); background-color: rgb(248, 248, 248);">
+<th style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: right;">Aware of Redux</th>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">No</td>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">Yes</td>
+</tr>
+<tr style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255);">
+<th style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: right;">To read data</th>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">Read data from props</td>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">Subscribe to Redux state</td>
+</tr>
+<tr style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; border-top: 1px solid rgb(204, 204, 204); background-color: rgb(248, 248, 248);">
+<th style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: right;">To change data</th>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">Invoke callbacks from props</td>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">Dispatch Redux actions</td>
+</tr>
+<tr style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255);">
+<th style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: right;">Are written</th>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">By hand</td>
+<td style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; padding: 6px 13px; border: 1px solid rgb(221, 221, 221);">Usually generated by React Redux</td>
+</tr>
+</table>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Why separate presentational component and container component?</span></div>
+<div>A</div>
+<div>=&gt;Better reusabiliy</div>
+<div>=&gt;Better understanding of the app</div>
+<div>=&gt;more flexible, tweak the UI without touching the logic.</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to create a container component?</span></div>
+<div>A</div>
+<div>=&gt;The function of a container component is to</div>
+<div>(1) read parts of redux state tree and pass it to props of child component.</div>
+<div>(2) Receive dispatch method and inject it to child components as props. </div>
+<div>=&gt;How to create a container component?</div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><i><b>(1) Make Store available to all the container component:</b></i></span></div>
+<div>
+<div>Ex:</div>
+</div>
+<div>
+<div style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; overflow: auto; direction: ltr; padding: 16px; border: 0px; border-radius: 3px; color: rgb(51, 51, 51); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247);"><code style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; padding: 0px; border-radius: 3px; border: 0px; overflow: initial; background: transparent;"><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> React from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'react'</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span> render <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span> from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'react-dom'</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span> Provider <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span> from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'react-redux'</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span> createStore <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span> from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'redux'</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> todoApp from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'./reducers'</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> App from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'./components/App'</span><br/>
+<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">let</span> store <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">createStore</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>todoApp<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><br/>
+<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">render</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&lt;</span>Provider store<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span>store<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span><br/>
+    <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&lt;</span>App <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">/</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&lt;</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">/</span>Provider<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">,</span><br/>
+  document<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">.</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">getElementById</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'root'</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span></code>
+<div><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);"><span style="background-color: transparent;">)</span></span></div>
+</div>
+</div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><i><b>(2) Define mapStateToProps function: </b></i></span></div>
+<div><span style="font-size: 16px;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51);">(Why) do we need mapStateToProps?</span></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255);"><font color="#333333"><span style="font-size: 16px;">map each variable props of wrapping presentational component to part of </span><span style="font-size: 16px;">global</span><span style="font-size: 16px;"> state. </span></font></span></div>
+<div>(What) should mapStateToProps function return?</div>
+<div>mapStateToProps should return an object containing all the fields of props that you wanna pass to component. </div>
+<div>So the fields names should be exactly the same as props referenced inside of component. </div>
+<div><br/></div>
+<div><span style="font-size: 16px;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51);">Ex:</span></span></span></div>
+<div>
+<div style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; overflow: auto; direction: ltr; padding: 16px; border: 0px; border-radius: 3px; color: rgb(51, 51, 51); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247);"><code style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; padding: 0px; border-radius: 3px; border: 0px; max-width: initial; overflow: initial; background: transparent;"><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">const</span> getVisibleTodos <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>todos<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">,</span> filter<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">switch</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>filter<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span><br/>
+    <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">case</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'SHOW_ALL'</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">:</span><br/>
+      <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">return</span> todos<br/>
+    <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">case</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'SHOW_COMPLETED'</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">:</span><br/>
+      <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">return</span> todos<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">.</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">filter</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>t <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> t<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">.</span>completed<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><br/>
+    <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">case</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'SHOW_ACTIVE'</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">:</span><br/>
+      <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">return</span> todos<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">.</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">filter</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>t <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">!</span>t<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">.</span>completed<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span><br/>
+<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">const</span> mapStateToProps <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>state<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">return</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span><br/>
+    todos<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">:</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">getVisibleTodos</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>state<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">.</span>todos<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">,</span> state<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">.</span>visibilityFilter<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span></code></div>
+</div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><i><b>(3) Define mapDispatchToProps function: </b></i></span></div>
+<div><span style="font-size: 16px;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51);">(Why) do we need apDispatchToProps function?</span></span></span></div>
+<div><span style="font-size: 16px;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51);">sometimes, we need to give presentational component a chance to change the global state. </span></span></span></div>
+<div><span style="background-color: rgb(255, 255, 255);">Since presentational component doesn’t have direct access to global state, we call actions in props callback functions.</span></div>
+<div><span style="background-color: rgb(255, 255, 255);">(What) should mapDispatchToProps return</span></div>
+<div><span style="background-color: rgb(255, 255, 255);">return an object containing the implementation of all the props callback function of wrapping presentational component. </span></div>
+<div><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">receives the </span><a href="http://redux.js.org/docs/api/Store.html#dispatch" style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; text-decoration-line: none; color: rgb(65, 131, 196); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(255, 255, 255);"><code style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; padding: 0.2em 0px; border-radius: 3px; background-color: rgb(247, 247, 247);">dispatch()</code></a><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);"> method and returns callback props that you want to inject into the presentational component</span></div>
+<div>Ex:</div>
+<div>
+<div style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; overflow: auto; direction: ltr; padding: 16px; border: 0px; border-radius: 3px; color: rgb(51, 51, 51); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247);"><code style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; padding: 0px; border-radius: 3px; border: 0px; max-width: initial; overflow: initial; background: transparent;"><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">const</span> mapDispatchToProps <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>dispatch<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">return</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span><br/>
+    onTodoClick<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">:</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>id<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span><br/>
+      <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">dispatch</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">toggleTodo</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>id<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><br/>
+    <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span><br/>
+  <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span><br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span></code></div>
+</div>
+<div><br/></div>
+<div>(How) can we define props that has nothing to do with state and actions?</div>
+<div>there are two ways:</div>
+<div>(1) simply define it in the mapStateToProps:</div>
+<div>Ex:</div>
+<div>
+<div style="padding: 5px; border: 0px; font-size: 13px; max-height: 600px; overflow: auto; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; color: rgb(36, 39, 41); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(239, 240, 241);"><code style="padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241);">const fooBar = () =&gt; 'foobar!'<br/>
+<br/>
+const mapStateToProps = (state) =&gt; {<br/>
+  return {<br/>
+    todos: getVisibleTodos(state.todos, state.visibilityFilter),<br/>
+    fooBar : fooBar<br/>
+  }</code>
+<div><span style="background-color: rgb(239, 240, 241);">}</span></div>
+</div>
+</div>
+<div><br/></div>
+<div>(2) pass it to container component, we can use ownProps to reference props passed to container inside of mapStateToProps function.</div>
+<div>The good thing is if the props changed, the mapStateToProps will be called again.</div>
+<div>Ex:</div>
+<div>
+<div style="padding: 0px; border: 0px; word-wrap: break-word; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+<p style=" padding: 0px; border: 0px; font-size: 15px; clear: both;"><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(36, 39, 41);"><strong style=" padding: 0px; border: 0px; font-size: 15px; font-weight: bold;">Some Other Component</strong></span></span></p>
+<pre style=" padding: 5px; border: 0px; font-size: 13px; max-height: 600px; overflow: auto; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; word-wrap: normal; background-color: rgb(239, 240, 241);">
+<span style="color: rgb(36, 39, 41);"><code style=" padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; white-space: inherit; background-color: rgb(239, 240, 241);"> &lt;MyContainer fooBar={() =&gt; alert('foobar!')}
+</code>
+</span>
+</pre>
+<p style=" padding: 0px; border: 0px; font-size: 15px; clear: both;"><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(36, 39, 41);"><strong style=" padding: 0px; border: 0px; font-size: 15px; font-weight: bold;">MyContainer</strong></span></span></p>
+<div style="padding: 5px; border: 0px; max-height: 600px; overflow: auto; background-color: rgb(239, 240, 241);"><span style="font-size: 13px;"><span style="font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;"><span style="color: rgb(36, 39, 41);"><br/>
+<code style="padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241);">const mapStateToProps = (state, ownProps) =&gt; {<br/>
+  return {<br/>
+    todos: getVisibleTodos(state.todos, state.visibilityFilter),<br/>
+    fooBar: ownProps.fooBar<br/>
+  }<br/>
+}</code></span></span></span>
+<div><br/></div>
+</div>
+</div>
+</div>
+<div><span style="font-size: 18px;"><i><b>(4) Define container component by calling connect( ) method from redux:</b></i></span></div>
+<div>Ex:</div>
+<div>
+<div style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; overflow: auto; direction: ltr; padding: 16px; border: 0px; border-radius: 3px; color: rgb(51, 51, 51); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.2px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247);"><code style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; padding: 0px; border-radius: 3px; border: 0px; max-width: initial; overflow: initial; background: transparent;"><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span> connect <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span> from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'react-redux'</span><br/>
+<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">const</span> VisibleTodoList <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">connect</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span><br/>
+  mapStateToProps<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">,</span><br/>
+  mapDispatchToProps<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>TodoList<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><br/>
+<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">export</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">default</span> VisibleTodoList</code></div>
+</div>
+<div><br/></div>
+<div><span style="color: rgb(51, 51, 51);"><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><br/></span></span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to combine container component and presentational component together?</span></div>
+<div>A</div>
+<div>=&gt;(Why) do we need to connect container component with presentational component?</div>
+<div>Presentational components only takes in props, so it doesn’t have connection with the global state.</div>
+<div>Container component have connection to the state. So we need to connect the props of presentational component (either function or variable) to global state.</div>
+<div>=&gt;(How) can we connect container with presentational:</div>
+<div><code style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; direction: ltr; padding: 0px; border-radius: 3px; border: 0px; overflow: initial; background: transparent;"><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">import</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">{</span> connect <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">}</span> from <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(102, 153, 0);">'react-redux'</span><br/>
+<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);">const</span> VisibleTodoList <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span> <span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(221, 74, 104);">connect</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span><br/>
+  mapStateToProps<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">,</span><br/>
+  mapDispatchToProps<br/>
+<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">(</span>TodoList<span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(153, 153, 153);">)</span><br/>
+<br/></span></code></div>
+<div><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);"><span style="background-color: transparent;">export</span></span><span style="background-color: transparent;"> </span><span style="box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; color: rgb(0, 119, 170);"><span style="background-color: transparent;">default</span></span><span style="background-color: transparent;"> VisibleTodoList</span></span></div>
+<div>=&gt;(How) can we connect multiple presentational components to one container component?</div>
+<div>The idea is</div>
+<div><i><b>(1) wrap up these multiple presentational view with another container component:</b></i></div>
+<div>
+<div style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 11.9px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; padding: 16px; overflow: auto; border-radius: 3px; color: rgb(51, 51, 51); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247);"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">import</span> <span style="box-sizing: border-box; color: rgb(51, 51, 51);">OtherFeature</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">from</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>../containers/OtherFeature<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span><br/>
+<br/>
+<span style="box-sizing: border-box; color: rgb(167, 29, 93);">export</span> <span style="box-sizing: border-box; color: rgb(237, 106, 67);">default</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">function</span> <span style="box-sizing: border-box; color: rgb(121, 93, 163);">ThingView</span>({ entity, doStuff }) {<br/>
+  <span style="box-sizing: border-box; color: rgb(167, 29, 93);">if</span> (<span style="box-sizing: border-box; color: rgb(167, 29, 93);">!</span>entity) <span style="box-sizing: border-box; color: rgb(167, 29, 93);">return</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span>div<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span>Not Found<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span><span style="box-sizing: border-box; color: rgb(167, 29, 93);">/</span>div<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span><br/>
+<br/>
+  <span style="box-sizing: border-box; color: rgb(167, 29, 93);">return</span> (<br/>
+    <span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span>div<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span><br/>
+      {entity}<br/>
+      <span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span>button onClick<span style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span>{() <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=&gt;</span> <span style="box-sizing: border-box; color: rgb(121, 93, 163);">doStuff</span>()}<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span>stuff<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span><span style="box-sizing: border-box; color: rgb(167, 29, 93);">/</span>button<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span><br/>
+<br/>
+      <span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span>OtherFeature <span style="box-sizing: border-box; color: rgb(167, 29, 93);">/</span><span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span> <span style="box-sizing: border-box; color: rgb(150, 152, 150);">// connected to store, independent container (no router props)</span><br/>
+    <span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span><span style="box-sizing: border-box; color: rgb(167, 29, 93);">/</span>div<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span><br/>
+  )
+<div>}</div>
+</div>
+</div>
+<div><br/></div>
+<div><i><b>(2) connect this wrapping container with the container:</b></i></div>
+<div>
+<div style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 11.9px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; padding: 16px; overflow: auto; border-radius: 3px; color: rgb(51, 51, 51); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247);">
+<div><span style="box-sizing: border-box; color: rgb(167, 29, 93);">export</span> <span style="box-sizing: border-box; color: rgb(237, 106, 67);">default</span> <span style="box-sizing: border-box; color: rgb(51, 51, 51);">connect</span>(mapState, mapDispatch)(ThingView)</div>
+</div>
+</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Where to implement action, reducers and stores in the react-redux application?</span></div>
+<div>A</div>
+<div>In the root directories, we have:</div>
+<div>=&gt;Action folder: index.js</div>
+<div>=&gt;reducer folder:multiple reducers to govern each state, and one index.js to get everything together. </div>
+<div>=&gt;component folder (presentational)</div>
+<div>=&gt;container folder</div>
+<div><br/></div>
+<div>
+<div><span style="font-size: 24px;"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></span></div>
+</div>
+<div><span style="font-size: 24px;"><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to design a react application with redux?</span></span></div>
+<div>A</div>
+<div><a href="https://github.com/rajaraodv/redux/tree/master/examples/todos" rev="en_rl_small">https://github.com/rajaraodv/redux/tree/master/examples/todos</a></div>
+<div><b>(Step 1) write a detailed mock of the screen</b></div>
+<div>make sure to include all the data and visual effect.</div>
+<div><b>(Step 2) Divide app into components</b></div>
+<div>
+<div>raw boxes around every component and give them names. </div>
+<div>How to break up to components?</div>
+</div>
+<div>=&gt;Use single responsibility principle: If you can describe the function of component in one single componet.</div>
+<div><b>(Step 3) List State and Actions for each Component.</b></div>
+<div>How to figure out state?</div>
+<div>Think if this component need any data outside the component to display its view?</div>
+<div>
+<div>
+<div>(How) to figure out the minimum state, (how to tell if certain piece of data should be state or not)?</div>
+<div>Ask three questions:</div>
+<div>=&gt;Is it passed in from a parent via this.props?</div>
+<div>=&gt;Does it remain unchanged over time?</div>
+<div>=&gt;Can you compute it based on any other state or props?</div>
+</div>
+</div>
+<div>If the answer to any of above question is YES, then it is not </div>
+<div>How to figure out action?</div>
+<div>Think what is the behavior of this component?</div>
+<div><img src="React%20%7C%20React-Redux.resources/2CEF9FE1-5D3F-48E5-AD1F-E28A2176AFC0.png" height="402" width="696"/></div>
+<div><b>(Step 4) Create Action Creators For each action:</b></div>
+<div>
+<div style="overflow: auto; padding: 20px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(0, 0, 0, 0.0470588); background-position: initial initial; background-repeat: initial initial;">
+<div><span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">//index.js</span></span></span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">//1. Takes the text from AddTodo field and returns proper “Action” JSON to send to other components.</span></span></span></div>
+<span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">export const addTodo = (text) =&gt; {<br/>
+ return {<br/>
+ type: ‘ADD_TODO’,<br/>
+ id: nextTodoId++,<br/>
+ text,  //&lt;--ES6. same as text:text, in ES5<br/>
+ completed: false //&lt;-- initially this is set to false<br/>
+ }<br/>
+}<br/>
+ <br/>
+//2. Takes filter string and returns proper “Action” JSON object to send to other components.<br/>
+export const setVisibilityFilter = (filter) =&gt; {<br/>
+ return {<br/>
+ type: ‘SET_VISIBILITY_FILTER’,<br/>
+ filter<br/>
+ }<br/>
+}<br/>
+ <br/>
+//3. Takes Todo item’s id and returns proper “Action” JSON object to send to other components.<br/>
+export const toggleTodo = (id) =&gt; {<br/>
+ return {<br/>
+ type: ‘TOGGLE_TODO’,<br/>
+ id<br/>
+ }</span></span></span>
+<div><span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">}</span></span></span></div>
+</div>
+</div>
+<div><b>(Step 5) Write Reducers for each action</b></div>
+<div>
+<div style="overflow: auto; padding: 20px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(0, 0, 0, 0.0470588); background-position: initial initial; background-repeat: initial initial;"><span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">const todo = (state, action) =&gt; {<br/>
+  switch (action.type) {<br/>
+     case ‘ADD_TODO’:<br/>
+      return […state,{id: <a href="http://action.id"><span style="color: rgba(0, 0, 0, 0.8);">action.id</span></a>, text: action.text, <br/>
+              completed:false}]<br/>
+ <br/>
+     case ‘TOGGLE_TODO’:<br/>
+        return state.map(todo =&gt;<br/>
+                if (todo.id !== <a href="http://action.id"><span style="color: rgba(0, 0, 0, 0.8);">action.id</span></a>) {<br/>
+                  return todo<br/>
+                }<br/>
+                 return Object.assign({}, <br/>
+                    todo, {completed: !todo.completed})<br/>
+            )<br/>
+ <br/>
+      case ‘SET_VISIBILITY_FILTER’: {<br/>
+       return action.filter<br/>
+      }<br/>
+ <br/>
+     default:<br/>
+      return state<br/>
+    } </span></span></span>
+<div><span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">}</span></span></span></div>
+<div><br/></div>
+<div>
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box; border: 1px solid rgb(221, 221, 221); border-radius: 3px;">
+<div style="box-sizing: border-box; overflow-x: auto; overflow-y: hidden; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;">
+<div>const todos = (state = [], action) =&gt; </div>
+<div>{</div>
+<div>     switch (action.type)</div>
+<div>      {</div>
+<div>        case 'ADD_TODO':</div>
+<div>           return [ ...state, todo(undefined, action) ]</div>
+<div> </div>
+<div>        case 'TOGGLE_TODO':</div>
+<div>           return state.map(t =&gt; todo(t, action) )</div>
+<div> </div>
+<div>        default: return state</div>
+<div>     }</div>
+<div>} </div>
+<div>export default todos</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div><b><br/></b></div>
+<div>need to combine all the reducers together in the reducers/index.js</div>
+<div>Ex:</div>
+<div><span style="color: rgb(4, 51, 255);">import { combineReducers } from 'redux';</span></div>
+<div><span style="color: rgb(4, 51, 255);">import CurrentTabNumber from './currentTabNumber';</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">const appReducer = combineReducers({</span></div>
+<div><span style="color: rgb(4, 51, 255);">  CurrentTabNumber</span></div>
+<div><span style="color: rgb(4, 51, 255);">})</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">export default appReducer;</span></div>
+<div><b><br/></b></div>
+<div><b>(Step 6) Implement every presentational component</b></div>
+<div><b>(Step 7) Create container component for some/all presentational component.</b></div>
+<div>If the mock up component has either state or action, we need to wrap it up with a container.</div>
+<div>If the mock up components share the same state and action, we need to wrap it up with container.</div>
+<div>Ex:</div>
+<table style="box-sizing: border-box; border-spacing: 0px; border-collapse: collapse; tab-size: 2; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);width:636px;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;width:41.66666666666667%;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">import</span> { <span style="box-sizing: border-box; color: rgb(51, 51, 51);">connect</span> } <span style="box-sizing: border-box; color: rgb(167, 29, 93);">from</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>react-redux<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">import</span> { <span style="box-sizing: border-box; color: rgb(51, 51, 51);">setVisibilityFilter</span> } <span style="box-sizing: border-box; color: rgb(167, 29, 93);">from</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>../actions<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">import</span> <span style="box-sizing: border-box; color: rgb(51, 51, 51);">Link</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">from</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>../components/Link<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><br/></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">const</span> <span style="box-sizing: border-box; color: rgb(0, 134, 179);">mapStateToProps</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> (<span style="box-sizing: border-box; color: rgb(51, 51, 51);">state</span>, <span style="box-sizing: border-box; color: rgb(51, 51, 51);">ownProps</span>) <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=&gt;</span> {</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">return</span> {</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">active<span style="box-sizing: border-box; color: rgb(167, 29, 93);">:</span> <span style="box-sizing: border-box; color: rgb(51, 51, 51);">ownProps</span>.<span style="box-sizing: border-box; color: rgb(51, 51, 51);">filter</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">===</span> <span style="box-sizing: border-box; color: rgb(51, 51, 51);">state</span>.<span style="box-sizing: border-box; color: rgb(51, 51, 51);">visibilityFilter</span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">}</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">}</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><br/></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">const</span> <span style="box-sizing: border-box; color: rgb(0, 134, 179);">mapDispatchToProps</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> (<span style="box-sizing: border-box; color: rgb(51, 51, 51);">dispatch</span>, <span style="box-sizing: border-box; color: rgb(51, 51, 51);">ownProps</span>) <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=&gt;</span> {</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">return</span> {</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(121, 93, 163);">onClick</span><span style="box-sizing: border-box; color: rgb(167, 29, 93);">:</span> () <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=&gt;</span> {</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(121, 93, 163);">dispatch</span>(<span style="box-sizing: border-box; color: rgb(121, 93, 163);">setVisibilityFilter</span>(<span style="box-sizing: border-box; color: rgb(51, 51, 51);">ownProps</span>.<span style="box-sizing: border-box; color: rgb(51, 51, 51);">filter</span>))</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">}</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">}</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">}</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><br/></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">const</span> <span style="box-sizing: border-box; color: rgb(0, 134, 179);">FilterLink</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> <span style="box-sizing: border-box; color: rgb(121, 93, 163);">connect</span>(</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">mapStateToProps,</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">mapDispatchToProps</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">)(Link)</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><br/></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">export</span> <span style="box-sizing: border-box; color: rgb(237, 106, 67);">default</span> <span style="box-sizing: border-box; color: rgb(51, 51, 51);">FilterLink</span></td>
+</tr>
+</table>
+<div><b>(Step 8) Finally bring them all together</b></div>
+<div>
+<pre style="overflow: auto; font-family: Menlo, Monaco, &quot;Courier New&quot;, Courier, monospace; font-size: 16px; padding: 20px; white-space: pre-wrap; color: rgba(0, 0, 0, 0.8); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgba(0, 0, 0, 0.0470588);">
+import React from ‘react’ // ← Main React library<br/>import { render } from ‘react-dom’ // ← Main react library<br/>import { Provider } from ‘react-redux’ //← Bridge React and Redux<br/>import { createStore } from ‘redux’ // ← Main Redux library<br/>import todoApp from ‘./reducers’ // ← List of Reducers we created 
+</pre>
+<pre style="overflow: auto; font-family: Menlo, Monaco, &quot;Courier New&quot;, Courier, monospace; font-size: 16px; padding: 4px 20px 20px; white-space: pre-wrap; color: rgba(0, 0, 0, 0.8); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgba(0, 0, 0, 0.0470588);">
+//Import all components we created earlier<br/>import AddTodo from ‘../containers/AddTodo’<br/>import VisibleTodoList from ‘../containers/VisibleTodoList’<br/>import Footer from ‘./Footer’ // ← This is a presentational component that contains 3 FilterLink Container comp
+</pre>
+<pre style="overflow: auto; font-family: Menlo, Monaco, &quot;Courier New&quot;, Courier, monospace; font-size: 16px; padding: 4px 20px 20px; white-space: pre-wrap; color: rgba(0, 0, 0, 0.8); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgba(0, 0, 0, 0.0470588);">
+//Create Redux Store by passing it the reducers we created earlier.<br/>let store = createStore(reducers)
+</pre>
+<div style="overflow: auto; padding: 4px 20px 20px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(0, 0, 0, 0.0470588); background-position: initial initial; background-repeat: initial initial;"><span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">render(<br/>
+ &lt;Provider store={store}&gt; ← The Provider component from react-redux injects the store to all the child components<br/>
+ &lt;div&gt;<br/>
+ &lt;AddTodo /&gt;<br/>
+ &lt;VisibleTodoList /&gt;<br/>
+ &lt;Footer /&gt;<br/>
+ &lt;/div&gt;<br/>
+ &lt;/Provider&gt;,<br/>
+ document.getElementById(‘root’) //&lt;-- Render to a div w/ id "root"</span></span></span>
+<div><span style="font-size: 16px;"><span style="font-family: Menlo, Monaco, 'Courier New', Courier, monospace;"><span style="color: rgba(0, 0, 0, 0.8);">)</span></span></span></div>
+</div>
+</div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to integrate redux into react?</span></div>
+<div>A</div>
+<div>(1)</div>
+<div>
+<div style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; padding: 16px; overflow: auto; border-radius: 3px; color: rgb(51, 51, 51); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247);">
+<div><code style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0px; border-radius: 3px; border: 0px; overflow: visible; background: transparent;">npm install --save react-redux</code></div>
+</div>
+</div>
+<div><br/></div>
+<div>(2)</div>
+<div>file structures in the root:</div>
+<div>=&gt;actions (export each actions)</div>
+<div>Ex:</div>
+<table style="box-sizing: border-box; border-spacing: 0px; border-collapse: collapse; tab-size: 2; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);width:391px;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;width:64.19437340153452%;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">export</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">const</span> <span style="box-sizing: border-box; color: rgb(0, 134, 179);">addTodo</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> (<span style="box-sizing: border-box; color: rgb(51, 51, 51);">text</span>) <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=&gt;</span> {</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">return</span> {</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">type<span style="box-sizing: border-box; color: rgb(167, 29, 93);">:</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>ADD_TODO<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span>,</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">id<span style="box-sizing: border-box; color: rgb(167, 29, 93);">:</span> nextTodoId<span style="box-sizing: border-box; color: rgb(167, 29, 93);">++</span>,</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">text</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">}</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;">}</td>
+</tr>
+</table>
+<div>=&gt;components</div>
+<div>=&gt;containers</div>
+<div>export each containers</div>
+<div>=&gt;reducers</div>
+<div>reducers can be written in multiple files, need to combine them together in index.js and export it. </div>
+<div><br/></div>
+<div>(3)</div>
+<div>In the index.js file,</div>
+<div>import provider, reateStore and the reducer</div>
+<table style="box-sizing: border-box; border-spacing: 0px; border-collapse: collapse; tab-size: 2; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);width:523px;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;width:51.816443594646266%;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">import</span> { <span style="box-sizing: border-box; color: rgb(51, 51, 51);">Provider</span> } <span style="box-sizing: border-box; color: rgb(167, 29, 93);">from</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>react-redux<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">import</span> { <span style="box-sizing: border-box; color: rgb(51, 51, 51);">createStore</span> } <span style="box-sizing: border-box; color: rgb(167, 29, 93);">from</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>redux<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">import</span> <span style="box-sizing: border-box; color: rgb(51, 51, 51);">todoApp</span> <span style="box-sizing: border-box; color: rgb(167, 29, 93);">from</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>./reducers<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span></td>
+</tr>
+</table>
+<div>create store</div>
+<table style="box-sizing: border-box; border-spacing: 0px; border-collapse: collapse; tab-size: 2; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);width:238px;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;width:100%;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);"><br/>
+let</span> store <span style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span> <span style="box-sizing: border-box; color: rgb(121, 93, 163);">createStore</span>(todoApp)</td>
+</tr>
+</table>
+<div>wrap up with provider</div>
+<table style="box-sizing: border-box; border-spacing: 0px; border-collapse: collapse; tab-size: 2; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+<tbody style="box-sizing: border-box;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span>Provider store<span style="box-sizing: border-box; color: rgb(167, 29, 93);">=</span>{store}<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span>App <span style="box-sizing: border-box; color: rgb(167, 29, 93);">/</span><span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span></td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; padding: 0px 10px; min-width: 50px; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgba(0, 0, 0, 0.298039); text-align: right; white-space: nowrap; vertical-align: top; cursor: pointer; -webkit-user-select: none; border-style: solid; border-color: rgb(238, 238, 238); border-width: 0px 1px 0px 0px;"><br/></td>
+<td style="box-sizing: border-box; padding: 0px 10px; vertical-align: top; overflow: visible; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 12px; color: rgb(51, 51, 51); word-wrap: normal; white-space: pre;"><span style="box-sizing: border-box; color: rgb(167, 29, 93);">&lt;</span><span style="box-sizing: border-box; color: rgb(167, 29, 93);">/</span>Provider<span style="box-sizing: border-box; color: rgb(167, 29, 93);">&gt;</span>,</td>
+</tr>
+</tbody>
+</table>
+<div><br/></div>
+<div><br/></div>
+</body></html>

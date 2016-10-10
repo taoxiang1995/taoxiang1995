@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="117.5629806518555"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-09-14 21:59:23 +0000"/><meta name="latitude" content="47.44846012433641"/><meta name="longitude" content="-122.3020074004097"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-09-15 00:03:57 +0000"/><title>Polymer Library | Basic</title></head><body>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is polymer and why should we use it?</span></div>
+<div>A</div>
+<div>=&gt;Polymer is an open-source javascript library that helps for building web application using web components.</div>
+<div>=&gt;Why we use it?</div>
+<div>reuse a lot of html code</div>
+<div>easy to read</div>
+<div>have native dom features to web component.</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What features does polymer provide?</span></div>
+<div>A</div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:15.659340659340659%;">
+<div>Register element</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:84.24908424908425%;">
+<div>What: register an element associates with tag name and prototype</div>
+<div>Why we need this: </div>
+<div>(1) we can use it as a dom element in other html page</div>
+<div>(2) we can add property and events to this customer element just like native dom element.</div>
+<div>How to register an element:</div>
+<div><br/></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;link rel="import" href="<a href="https://polygit2.appspot.com/components/polymer/polymer.html" rev="en_rl_minimal"><span style="color: rgb(4, 51, 255);">https://polygit2.appspot.com/components/polymer/polymer.html</span></a>"&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);"> </span></span></div>
+<div><span style="color: rgb(51, 51, 51); font-family: &quot;Source Code Pro&quot;, &quot;Roboto Mono&quot;, Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);"><span style="color: rgb(4, 51, 255);">&lt;script&gt;</span></span></div>
+<div><span style="color: rgb(51, 51, 51); font-family: &quot;Source Code Pro&quot;, &quot;Roboto Mono&quot;, Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">// register a new element called proto-element</span></div>
+<div><span style="color: rgb(51, 51, 51); font-family: &quot;Source Code Pro&quot;, &quot;Roboto Mono&quot;, Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  <span style="color: rgb(4, 51, 255);">Polymer({</span></span></div>
+<div><span style="color: rgb(51, 51, 51); font-family: &quot;Source Code Pro&quot;, &quot;Roboto Mono&quot;, Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);"><span style="color: rgb(4, 51, 255);">    is: "proto-element",</span></span></div>
+<div><span style="color: rgb(51, 51, 51); font-family: &quot;Source Code Pro&quot;, &quot;Roboto Mono&quot;, Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    // add a callback to the element's prototype ready:</span></div>
+<div><span style="color: rgb(51, 51, 51); font-family: &quot;Source Code Pro&quot;, &quot;Roboto Mono&quot;, Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    <span style="color: rgb(4, 51, 255);">function() {</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">      this.textContent = "I'm a proto-element. Check out my prototype!"</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">     }</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">});</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);"> </span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;/script&gt;</span></span></div>
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>local dom template</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>What: add native dom elements to polymer web components</div>
+<div>Why: we need to use native dom to implement our own UI</div>
+<div>How:</div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;link rel="import" href="<a href="https://polygit2.appspot.com/components/polymer/polymer.html" rev="en_rl_minimal"><span style="color: rgb(4, 51, 255);">https://polygit2.appspot.com/components/polymer/polymer.html</span></a>"&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;dom-module id="dom-element"&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;template&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    &lt;p&gt;I'm a DOM element. This is my local DOM!&lt;/p&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;/template&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;script&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    Polymer({ is: "dom-element" });</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;/script&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;/dom-module&gt;</span></span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>compose local dom</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>What: we can write parent dom for local doms</div>
+<div>Why: sometimes we just needs to write a wrap component, say, a photo frame, in this case we do not know what will be the child component yet. </div>
+<div><br/></div>
+<div>How:</div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;link rel="import" href="<a href="https://polygit2.appspot.com/components/polymer/polymer.html" rev="en_rl_minimal"><span style="color: rgb(4, 51, 255);">https://polygit2.appspot.com/components/polymer/polymer.html</span></a>"&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;dom-module id="picture-frame"&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;template&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    &lt;!-- scoped CSS for this element --&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    &lt;style&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">      div { display: inline-block; background-color: #ccc; border-radius: 8px; padding: 4px; }</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    &lt;/style&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    &lt;div&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">      &lt;!-- any children are rendered here --&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">      &lt;content&gt;&lt;/content&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    &lt;/div&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;/template&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;script&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">    Polymer({ is: "picture-frame", });</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">  &lt;/script&gt;</span></span></div>
+<div><span style="color: rgb(4, 51, 255);"><span style="font-family: 'Source Code Pro', 'Roboto Mono', Consolas, Menlo, monospace; font-size: 15px; font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(255, 255, 255);">&lt;/dom-module&gt;</span></span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>property binding</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>What: Property is like native mom’s property where we can pass in value to the web component. </div>
+<div>Why: Sometimes, we need to pass in some value to a web component, and web component use this passed in value to render. </div>
+<div>How:</div>
+<div><span style="color: rgb(4, 51, 255);">&lt;link rel="import"  href="https://polygit2.appspot.com/components/polymer/polymer.html"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;dom-module id="configurable-name-tag"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">  &lt;template&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">    &lt;!-- bind to the "owner" property --&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">    This is &lt;b&gt;{{owner}}&lt;/b&gt;'s configurable-name-tag element.</span></div>
+<div><span style="color: rgb(4, 51, 255);">  &lt;/template&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">  &lt;script&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">    Polymer({</span></div>
+<div><span style="color: rgb(4, 51, 255);">      is: "configurable-name-tag",</span></div>
+<div><span style="color: rgb(4, 51, 255);">      properties: {</span></div>
+<div><span style="color: rgb(4, 51, 255);">        // declare the owner property</span></div>
+<div><span style="color: rgb(4, 51, 255);">        owner: {</span></div>
+<div><span style="color: rgb(4, 51, 255);">          type: String,</span></div>
+<div><span style="color: rgb(4, 51, 255);">          value: "Daniel"</span></div>
+<div><span style="color: rgb(4, 51, 255);">        }</span></div>
+<div><span style="color: rgb(4, 51, 255);">      }</span></div>
+<div><span style="color: rgb(4, 51, 255);">    });</span></div>
+<div><span style="color: rgb(4, 51, 255);">  &lt;/script&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;/dom-module&gt;</span></div>
+<div><br/></div>
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>lifecycle callbacks</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>data binding</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to build a web component using polymer?</span></div>
+<div>A</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:14.926739926739927%;">
+<div>Step1:</div>
+<div>Download &amp; Set up</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:84.98168498168498%;">
+<div>npm install -g bower</div>
+<div>npm install -g polymer-cli</div>
+<div>polymer serve</div>
+<div>//it will be running on localhost 8080</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Step2:</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Step3:</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Step4:</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Step5:</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div>a</div>
+</body></html>

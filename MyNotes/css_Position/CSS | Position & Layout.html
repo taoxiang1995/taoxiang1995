@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="84.27233123779297"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-08-07 21:33:26 +0000"/><meta name="latitude" content="34.05383573712675"/><meta name="longitude" content="-118.4404522855362"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-08-17 06:40:42 +0000"/><title>CSS | Position &amp; Layout</title></head><body>
+<div><br/></div>
+<div> </div>
+<div>                                            <img src="CSS%20%7C%20Position%20&amp;%20Layout.resources/426F9045-9197-4460-941C-F13D392924AB.png" height="317" width="527"/></div>
+<div><br/></div>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">CSS Layout can be divided to following parts:</span></span></div>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">Layout within Box:</span></span></div>
+<ul>
+<li><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">Text layout</span></span></li>
+<li><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">Box Layout</span></span></li>
+</ul>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">Layout between Boxes (visual formatting):</span></span></div>
+<ul>
+<li><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">Normal Flow layout:</span></span></li>
+</ul>
+<div><font color="#FF2600"><span style="font-size: 18px;">          =&gt;BFC (</span><span style="font-size: 18px;">Block</span><span style="font-size: 18px;"> Formatting Context)</span></font></div>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">          =&gt;IFC (Inline Formatting Context)</span></span></div>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">          =&gt;FFC (Flex Formatting Context)</span></span></div>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">          =&gt;table </span></span></div>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">          =&gt;grid </span></span></div>
+<ul>
+<li><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">out of normal flow layout:</span></span></li>
+</ul>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">          =&gt;absolute</span></span></div>
+<div><span style="color: rgb(255, 38, 0);"><span style="font-size: 18px;">          =&gt;floats</span></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the difference between inline element and block element?</span></div>
+<div>A</div>
+<div>inline element and block element are two basic categories of elements in HTML.</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:8.342022940563085%;">
+<div>inline</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:91.55370177267987%;">
+<div>Think it as a box that acts like text</div>
+<div>=&gt;Flow along with text content, will not clear previous content to start  a new line</div>
+<div>=&gt;ignore top and button margin setting.</div>
+<div>=&gt;can set any paddings</div>
+<div>=&gt;ignore height and width</div>
+<div>=&gt;if floated to left or to right, will become a block element.</div>
+<div>Ex:</div>
+<div>&lt;a&gt;&lt;span&gt;&lt;b&gt;&lt;em&gt;&lt;i&gt;</div>
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>block</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;If no width set, it will try to fill entire parent container</div>
+<div>=&gt;If no height is set, will expand just enough to hold its children</div>
+<div>=&gt;can have margin and padding</div>
+<div>=&gt;By default, will be placed below previous elements</div>
+<div>Examples of Block Elements:</div>
+<div>&lt;p&gt;&lt;div&gt;&lt;form&gt;&lt;header&gt;&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;h1&gt;</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>replaced element</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;Replaced elements are element whose content are from outside source:</div>
+<div>&lt;img&gt;&lt;iframe&gt;&lt;button&gt;&lt;input&gt;&lt;textarea&gt;</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Can we put a block element inside of a inline element?</span></div>
+<div>A</div>
+<div>No we can not but with one exception:</div>
+<div>We can put &lt;a&gt; which is a block element inside of any element, even a inline element.</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is BOX model?</span></div>
+<div>A</div>
+<div><img src="CSS%20%7C%20Position%20&amp;%20Layout.resources/CC192F35-B311-486E-8253-02726AEA651A.png" height="398" width="987"/></div>
+<div>=&gt;Every HTML element can be considered as a box model (some has margin, some doesn’t)</div>
+<div>=&gt;we can specify size, radius, style and color for border.</div>
+<div>
+<dl>
+<dt style="font-weight: bold; text-align: left; color: rgb(0, 0, 0); font-family: sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><span title="'border-top'"><a name="propdef-border-top" style="background: yellow;"><strong>'border-top'</strong></a></span>, <span title="'border-right'"><a name="propdef-border-right" style="background: yellow;"><strong>'border-right'</strong></a></span>, <span title="'border-bottom'"><a name="propdef-border-bottom" style="background: yellow;"><strong>'border-bottom'</strong></a></span>, <span title="'border-left'"><a name="propdef-border-left" style="background: yellow;"><strong>'border-left'</strong></a></span></dt>
+</dl>
+<table cellspacing="0" cellpadding="0" style="width:403px;">
+<tr valign="baseline" style="vertical-align: baseline;">
+<td style="font-family: sans-serif;width:11.662531017369728%;"><em>Value:</em>  </td>
+<td style="font-family: sans-serif;width:88.33746898263027%;">[ <a href="https://www.w3.org/TR/CSS21/box.html#value-def-border-width" style="color: black; background: transparent;" rev="en_rl_minimal">&lt;border-width&gt;</a> || <a href="https://www.w3.org/TR/CSS21/box.html#value-def-border-style" style="color: black; background: transparent;" rev="en_rl_minimal">&lt;border-style&gt;</a> || <a href="https://www.w3.org/TR/CSS21/box.html#propdef-border-top-color" style="color: black; background: transparent;" rev="en_rl_minimal">&lt;'border-top-color'&gt;</a> ] </td>
+</tr>
+</table>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div>Q</div>
+<div>What are the positioning properties and how to use them?</div>
+<div>A</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:19.481680071492406%;">
+<div>static</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:80.42895442359249%;">
+<div>=&gt;this is default for every page element.</div>
+<div>=&gt;it means element will be positioned as it normally would, </div>
+<div>=&gt;change top, left, button, right will not affect it.</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>relative</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;positioned relative to itself.</div>
+<div>=&gt;limit the scope of absolutely positioned child element.</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>absolute</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;set the element position relative to the next element with relative or absolute positioning. </div>
+<div>=&gt;will be removed from normal flow. can’t affect other element, other element can’t affect it. </div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>fixed</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;set the element relative to the screen.</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div>Q</div>
+<div>How to position a image element to take up the whole screen?</div>
+<div>A</div>
+<div>.img</div>
+<div>{</div>
+<div>     width: 100%;</div>
+<div>     height:auto;</div>
+<div>     position : fixed;</div>
+<div>     top : 0;</div>
+<div>     left : 0;</div>
+<div>}</div>
+<div><br/></div>
+<div><b><span style="font-size: 36px;">                             Position to Center</span></b></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to center a text element?</span></div>
+<div>A</div>
+<div>[Basic Idea]</div>
+<div>Just set text-align to center.</div>
+<div>Ex:</div>
+<div><span style="color: rgb(4, 51, 255);">&lt;style&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     .wrap{</span></div>
+<div><span style="color: rgb(4, 51, 255);">          text-align : center</span></div>
+<div><span style="color: rgb(4, 51, 255);">     }</span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;/style&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;div class="wrap"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     Some Text</span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;/div&gt;</span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to center a Box element?</span></div>
+<div>A</div>
+<div>[Basic idea]</div>
+<div>There are two ways to center a box element.</div>
+<div>(1) using padding</div>
+<div>(2) using margin</div>
+<div><br/></div>
+<div><i><b>Using padding to center the box element:</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;div class="wrap"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     &lt;div class="content"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;style&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     @wrapWidth:400px;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     .wrap{</span></div>
+<div><span style="color: rgb(4, 51, 255);">          margin-left: auto;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          margin-right: auto;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          margin-top: 20px;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          width: @wrapWidth;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          height: @wrapWidth;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     }</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">     .content{</span></div>
+<div><span style="color: rgb(4, 51, 255);">          @contentWidth: 100px;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          height: @contentWidth;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          width: @contentWidth;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          padding: (@wrapWidth-@contentWidth)/2</span></div>
+<div><span style="color: rgb(4, 51, 255);">     }</span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;/style&gt;</span></div>
+<div><i><b>Using margin to center the box element:</b></i></div>
+<div>
+<div><span style="color: rgb(4, 51, 255);">&lt;div class="wrap"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     &lt;div class="content"&gt;&lt;/div&gt;</span></div>
+</div>
+<div><span style="color: rgb(4, 51, 255);">&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;style&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     @wrapWidth: 400px;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     @contentWidth: 100px;<br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">     .wrap{</span></div>
+<div><span style="color: rgb(4, 51, 255);">          height: @wrapWidth;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          width: 100%;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          overflow: hidden; /* prevent margin collapsing */</span></div>
+<div><span style="color: rgb(4, 51, 255);">     }</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">     .content{</span></div>
+<div><span style="color: rgb(4, 51, 255);">          margin-left: auto;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          margin-right: auto;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          margin-top: (@wrapWidth - @contentWidth)/2;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          width: 100px;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          height: @contentWidth;<br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">     }<br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">&lt;/style&gt;</span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is margin collapsing rule?</span></div>
+<div>A</div>
+<div><img src="CSS%20%7C%20Position%20&amp;%20Layout.resources/EE5C48EC-43DE-4A08-9368-27D91AB67A0D.png" height="707" width="668"/></div>
+<div>Top and Buttom margin of blocks are sometimes merged into a single margin whose size is the larger one of the margin. </div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to prevent margin collapsing?</span></div>
+<div>A</div>
+<div>Way1: set parent overflow to hidden or auto:    </div>
+<div>
+<div style="padding: 5px; border: 0px; max-height: 600px; overflow: auto; color: rgb(57, 51, 24); font-style: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(239, 240, 241);">
+<div><code style="padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241);"><span style="padding: 0px; border: 0px; font-size: 13px; color: rgb(48, 51, 54);">.parent { overflow: auto; }</span></code></div>
+</div>
+</div>
+<div>
+<div style="padding: 5px; border: 0px; font-size: 13px; max-height: 600px; overflow: auto; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; color: rgb(57, 51, 24); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(239, 240, 241);"><code style="padding: 0px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; background-color: rgb(239, 240, 241);"><span style="padding: 0px; border: 0px; font-size: 13px; color: rgb(48, 51, 54);">.parent { overflow: hidden; }</span></code></div>
+</div>
+<div>Way2: adding a border:</div>
+<div>.ele{</div>
+<div>     border: 1px</div>
+<div>}</div>
+<div>Way3: change padding instead of margin</div>
+<div><br/></div>
+<div>Q</div>
+<div>a</div>
+<div><br/></div>
+<div><br/></div>
+</body></html>

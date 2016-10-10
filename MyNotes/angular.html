@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="89.6197509765625"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-08-12 01:38:46 +0000"/><meta name="latitude" content="34.05683434932264"/><meta name="longitude" content="-118.4457450371588"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-08-26 22:37:14 +0000"/><title>Angular.js | Basic</title></head><body>
+<div>Basic Terms in Angular.js:</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><b>Basic format of an Angular Component</b></span></div>
+<table style="-evernote-table:true;border-collapse:collapse;table-layout:fixed;margin-left:0px;width:100%;">
+<tbody>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(211,211,211);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(0, 0, 255);">  Import</span></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(211,211,211);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(51, 102, 255);">import { Component } from '@angular/core';</span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(211,211,211);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> </span><a style="color: rgb(30, 136, 229); text-decoration: none; font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" rev="en_rl_minimal" href="https://angular.io/docs/ts/latest/quickstart.html#component-decorator">@Component decorator</a><span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> </span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);"><br/></span></span></span></span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);">Tell Angular what template to use, where to create template and how is it looks like?</span></span></span></span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);"><br/></span></span></span></span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);">What: template </span></span></span></span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);">where: selector</span></span></span></span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);">how: styles</span></span></span></span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);">which: which services to use (provider)</span></span></span></span></div>
+<div><br/></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(211,211,211);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>@Component({</div>
+</div>
+<div>  selector: 'my-app',</div>
+<div>  providers : [HeroService],</div>
+<div>
+<div>  template: `</div>
+<div>  &lt;h1&gt;{{title}}&lt;/h1&gt;</div>
+<div>  &lt;h2&gt;My Heroes&lt;/h2&gt;</div>
+<div>  &lt;ul class="heroes"&gt;</div>
+<div>  &lt;li *ngFor = "let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"&gt;</div>
+<div>  &lt;span class = "badge"&gt;{{hero.id}}&lt;/span&gt; {{hero.name}}</div>
+<div>  &lt;/li&gt;</div>
+<div>  &lt;/ul&gt;</div>
+<div>  &lt;div *ngIf = "selectedHero"&gt;</div>
+<div>  &lt;h2&gt;{{selectedHero.name}} details!&lt;/h2&gt;</div>
+<div>  &lt;div&gt;&lt;label&gt;id: &lt;/label&gt;{{selectedHero.id}}&lt;/div&gt;</div>
+<div>  &lt;div&gt;</div>
+<div>  &lt;label&gt;name: &lt;/label&gt;</div>
+<div>  &lt;input [(ngModel)]="selectedHero.name" placeholder="name" /&gt;</div>
+<div>  &lt;/div&gt;</div>
+<div>  &lt;/div&gt;`,</div>
+<div>  styles: [`</div>
+<div>  .selected {</div>
+<div>  background-color: #CFD8DC !important;</div>
+<div>  color: white;</div>
+<div>  }</div>
+<div>  .heroes {</div>
+<div>  margin: 0 0 2em 0;</div>
+<div>  list-style-type: none;</div>
+<div>  padding: 0;</div>
+<div>  width: 15em;</div>
+<div>  }</div>
+<div>`]</div>
+<div>})</div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(211,211,211);padding:10px;margin:0px;width:50%;">
+<div><a style="color: rgb(30, 136, 229); text-decoration: none; font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" rev="en_rl_minimal" href="https://angular.io/docs/ts/latest/quickstart.html#component-class">component class</a></div>
+<div><br/></div>
+<div>Where we store the property and application logic. </div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(211,211,211);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>export class AppComponent {</div>
+<div>  public heroes = HEROES;</div>
+<div>  title = 'Tour of Heroes';</div>
+<div>  selectedHero : Hero;</div>
+<div>  onSelect(hero : Hero){</div>
+<div>  this.selectedHero = hero;</div>
+<div>  }</div>
+<div>}</div>
+</div>
+</div>
+<div><br/></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is Angular’s two way binding?</span></div>
+<div>A</div>
+<div>=&gt;Basically, two way binding means </div>
+<div>     UI &lt;——&gt; Data Source</div>
+<div>UI can change data source,</div>
+<div>on the other hand, data source can change the UI.</div>
+<div><img src="Angular.js%20%7C%20Basic.resources/B86FF975-4BFE-417D-A861-19565D094C1D.png" height="446" width="680"/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the difference between ":" and "=" in the class definition?</span></div>
+<div>A</div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>export class AppComponent {</div>
+<div>  public heroes = HEROES;</div>
+<div>  title = 'Tour of Heroes';</div>
+<div>  selectedHero : Hero;</div>
+<div>}</div>
+</div>
+</div>
+<div><br/></div>
+<div>"=" is used for initialization</div>
+<div>":" is used for declaration</div>
+<div>=&gt;sometimes, we initialization will include declaration.</div>
+<div>=&gt;sometimes, we can do initialization and declration together.</div>
+<div>Ex:</div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>heroes : HEROES = {</div>
+<div>     a : 23,</div>
+<div>     b : 5</div>
+<div>}</div>
+</div>
+</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the difference between class declration and object?</span></div>
+<div>A</div>
+<div>=&gt;class declaration is declaring a template for object, so should give each field a type.</div>
+<div>=&gt;object is just assiguing value to each of its member field. </div>
+<div>=&gt;we use ";" in class declration and use "," in object.</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the difference between interpolation and expression?</span></div>
+<div>A</div>
+<div>=&gt;interpolation means not treating it like a string, however, treat it using the value it represents.</div>
+<div>Ex:</div>
+<div>{{var1}}</div>
+<div>So angular will not read it as var1, instead, read it as the value it stands for. </div>
+<div>=&gt;expression:</div>
+<div>expression can be a function call, a variable </div>
+<div>expression in angular2 is in the " "</div>
+<div>Ex:</div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>&lt;button (click)="readRainbow($event)"&gt;</div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the difference between 1-way binding and 2-way binding?</span></div>
+<div>A</div>
+<div>=&gt;1 - way binding (React.js):</div>
+<div>we can only have state or some variable to control the value of html:</div>
+<div><span style="color: rgb(51, 102, 255);">&lt;input value = {this.state.val} /&gt;</span></div>
+<div>or just have html control its value.</div>
+<div><span style="color: rgb(51, 102, 255);">&lt;input /&gt;</span></div>
+<div><br/></div>
+<div>=&gt;2 - way binding (Angular.js)</div>
+<div><span style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"> UI &lt;——&gt; Data Source</span></div>
+<div>Both HTML and datasource can ontrol the value of html:</div>
+<div>  &lt;input [(ngModel)]="hero.name" placeholder="name" /&gt;</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to pass by a value from parent to child?</span></div>
+<div>A</div>
+<div>[basic idea]</div>
+<div>it is kind of similar like react.</div><div>The difference is, in addition to just referencing and using it in the child component, we also need to declare the attribute which will be passing in to the child in the child component. </div><div><br/></div><div><b><i>(0) Import input from angularcore:</i></b></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div>import {Input} from '@angular/core';</div></div><div><br/></div><div><br/></div>
+<div><i><b>(1) Define the attribute that will be passed in as input():</b></i></div>
+<div style="font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;"><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>export class HeroDetailComponent {</div>
+<div>  @Input()</div>
+<div>  hero : Hero</div>
+<div>}</div>
+</div>
+</div>
+<div style="font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;"><br/></div>
+<div><i><b>(2) Passing the variable as a target:</b></i></div>
+<div><br/></div>
+<div style="box-sizing: border-box; padding: 8px; border-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.14902); background-color: rgb(251, 250, 248);">
+<div><span style="font-size: 12px;"><span style="font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;"><span style="color: rgb(51, 51, 51);">&lt;my-hero-detail [hero] = "selectedHero"&gt; &lt;/my-hero-detail&gt;</span></span></span></div>
+</div>
+<div><b>Ex:</b></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>// in the parent:</div>
+<div>&lt;my-hero-detail [hero] = "selectedHero"&gt; &lt;/my-hero-detail&gt;</div>
+<div><br/></div>
+<div>//in the child component:</div>
+<div>//using it:</div>
+<div> &lt;h2&gt;{{hero.name}} details!&lt;/h2&gt;</div>
+<div>//declare it:</div>
+<div>export class HeroDetailComponent {</div>
+<div>  <span style="color: rgb(51, 102, 255);">@Input()</span></div>
+<div><span style="color: rgb(51, 102, 255);">  hero : Hero</span></div>
+<div>}</div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is @Input() decorator?</span></div>
+<div>A</div>
+<div>=&gt; <span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">Angular insists that we declare a </span><strong style="font-weight: bold; color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><em>target</em></strong><span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> property to be an </span><strong style="font-weight: bold; color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><em>input</em></strong><span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> property. </span></div>
+<div>=&gt; What is target?</div>
+<div>     target is in the square bracket to the left of "=" sign.</div>
+<div>=&gt; What is source?</div>
+<div>     <span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">A property is a </span><em style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">source</em><span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> if it appears in the template expression to the </span><strong style="font-weight: bold; color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><em>right</em></strong><span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> of the equals (=)</span></div>
+<div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(26, 35, 38);"><br/></span></span></span></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;">Q</span></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to use a component inside of another component?</span></div>
+<div>A</div>
+<div>[Basic Idea]</div>
+<div>It is different than in react, where we simply include that component and just use it.</div>
+<div>=&gt; In angular, for each component, it has a selector field, specifying where to render the component.</div>
+<div>=&gt;so in react, when we include a component, we need to create a tag that matches to that selector.</div>
+<div><br/></div>
+<div>3 Steps:</div>
+<div><b>(1) In component, specify the selector:</b></div>
+<div>Ex:</div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>@Component ({</div>
+<div>  selector : 'my-hero-detail',</div>
+</div>
+</div>
+<div><br/></div>
+<div><b>(2) import that component in the app.module.ts and register it in the declaration:</b></div>
+<div>Ex:</div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>import { HeroDetailComponent } from './hero-detail.component';</div>
+<div>declarations: [ AppComponent, HeroDetailComponent ],</div>
+</div>
+</div>
+<div><br/></div>
+<div><b>(3) use the component by adding its selector:</b></div>
+<div>Ex:</div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>  &lt;my-hero-detail [hero] = "selectedHero"&gt; &lt;/my-hero-detail&gt;</div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="font-size: 24px;"><b>Service</b></span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is service in Angular?</span></div>
+<div>A</div>
+<div>Service is a group of javascript functions that are responsible to do a specific tasks only.</div>
+<div>If a component want to use service, it needs to inject it.</div>
+<div><br/></div>
+<div>Why do we need  service?</div>
+<div>The idea is component should only be responsible for the view, so we should seperate the businees from it. </div>
+<div>So we put the specific task like get data, calculate something in service. </div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to make a service?</span></div>
+<div>A</div>
+<div><a rev="en_rl_small" href="https://angular.io/docs/ts/latest/tutorial/toh-pt4.html">https://angular.io/docs/ts/latest/tutorial/toh-pt4.html</a></div>
+<div><b>(1) import necessary modules and most importantly, especially injectable from '@angular/core'</b></div>
+<div><b><br/></b></div>
+<div><b>(2) define service class and export it. Note we need to say that class is injectable.</b></div>
+<div>Naming convention: serviceName.service.ts</div>
+<div><br/></div>
+<div>Ex:</div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>import { Injectable } from '@angular/core';</div>
+<div>import { HEROES } from './mock-heroes';</div>
+<div>import { Hero } from './hero';</div>
+<div><br/></div>
+<div>@Injectable()</div>
+<div>export class HeroService {</div>
+<div>  getHeroes () {</div>
+<div>  return Promise.resolve(HEROES);</div>
+<div>  }</div>
+<div>}<br/></div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to use a service in Component?</span></div>
+<div>A</div>
+<div><i><b>(1) Import the service:</b></i></div>
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>Ex:</div>
+<div>import { HeroService } from './hero.service';</div>
+</div>
+</div>
+<div><br/></div>
+<div><i><b>(2) Register it in the provide field of @Component:</b></i></div>
+<div>     Ex:</div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>providers : [HeroService]</div>
+</div>
+</div>
+<div><i><b><br/></b></i></div>
+<div><i><b>(3) Inject service to component using constructor:</b></i></div>
+<div>     Ex:</div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>     constructor (private heroService : HeroService) {}</div>
+</div>
+</div>
+<div><br/></div>
+<div><i><b>(4) Use it:</b></i></div>
+<div>     Ex:</div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>this.heroService.getHeroes()</div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="font-size: 24px;font-family:gotham, helvetica, arial, sans-serif;"><b>Life Cycle in Angular.js</b></span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to use life cycle function in angular.js?</span></div>
+<div>A</div>
+<div><a rev="en_rl_small">https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html#!#peek-a-boo</a></div>
+<div><b>(1) import life cycle hook  into component:</b></div>
+<div>Ex:</div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>import { OnInit } from '@angular/core';</div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><b>(2) implement life cycle hook when declaring component class:</b></div>
+<div>Ex:</div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>export class AppComponent implements OnInit {}</div>
+</div>
+</div>
+<div><br/></div>
+<div><b><br/></b></div>
+<div><b>(3) Define life cycle function inside of component class:</b></div>
+<div>Ex:</div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>ngOnInit(){</div>
+<div>  this.getHeroes();</div>
+<div>  }</div>
+</div>
+</div><div><br/></div><div>Q</div><div>How to triger the onInit () function?</div><div>A</div><div>=&gt;
+
+<span style="color: rgb(68, 90, 100); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">when a data-bound input property value changes</span></div><div><span style="font-size: 16px;"><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(68, 90, 100);">=&gt;</span></span></span></span>
+
+<span style="color: rgb(68, 90, 100); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">ngOnChanges will be triggered</span></div><div><span style="font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;"><span style="background-color: rgb(255, 255, 255);"><span style="color: rgb(68, 90, 100);">=&gt;then onInit will be triggered </span></span></span></div><div><br/></div>
+<div><b style="font-size: 24px;">Routing in Angular.js</b><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to use and set the routers in angular2 application?</span></div>
+<div><br/></div><div><i><b>(1)Set the base href at the top of &lt;head&gt; of index.js</b></i></div><div><i><b><br/></b></i></div><div>Routers need this to work.</div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>&lt;base href="/"&gt;</div>
+</div>
+</div>
+<div><br/></div>
+<div><i><b>(2)Configure routes (app.routing.ts)</b></i></div>
+<div>=&gt;path:  <span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">the router matches this route's path to the URL in the browser address bar </span></div>
+<div>=&gt;component:  <span style="color: rgb(26, 35, 38); font-family: Roboto, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">the component that the router should create when navigating to this route </span></div>
+<div>
+<div style="overflow: auto; font-family: Monaco, &quot;Lucida Console&quot;, monospace; font-size: 13px; margin-top: 0px; color: rgb(92, 112, 122); width: auto; position: relative; margin-bottom: 24px; border-radius: 4px; padding: 16px 32px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(245, 246, 247);">
+<div><br/></div>
+<div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;">
+<div>
+<div>import { Routes, RouterModule } from '@angular/router';</div>
+<div><br/></div>
+<div>import { HeroesComponent }      from './heroes.component';</div>
+<div><br/></div>
+<div>const appRoutes: Routes = [</div>
+<div>  {</div>
+<div>    path: 'heroes',</div>
+<div>    component: HeroesComponent</div>
+<div>  }</div>
+</div>
+<div>];</div>
+<div><br/></div>
+<div>
+<div>export const routing = RouterModule.forRoot(appRoutes);</div>
+</div>
+</div>
+<div><br/></div>
+</div>
+</div>
+<div><i><b>(3)Make the routes available to all the component by setting it up in the app.module.ts</b></i></div>
+<div>
+<div style="overflow: auto; font-family: Monaco, &quot;Lucida Console&quot;, monospace; font-size: 13px; margin-top: 0px; color: rgb(92, 112, 122); width: auto; position: relative; margin-bottom: 24px; border-radius: 4px; padding: 16px 32px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(245, 246, 247);"><code style="font-family: Monaco, &quot;Lucida Console&quot;, monospace; font-size: 13px; border-radius: 2px; color: rgb(92, 112, 122); padding: 0px; background: none;"><span style="color: rgb(212, 54, 105);">import</span><span style="color: rgb(92, 112, 122);"> </span><span style="color: rgb(122, 139, 148);">{</span><span style="color: rgb(92, 112, 122);"> routing </span><span style="color: rgb(122, 139, 148);">}</span><span style="color: rgb(92, 112, 122);">       </span> <span style="color: rgb(212, 54, 105);">from</span><span style="color: rgb(92, 112, 122);"> </span><span style="color: rgb(100, 127, 17);">'./app.routing'</span><span style="color: rgb(122, 139, 148);">;</span><span style="color: rgb(92, 112, 122);"><br/>
+<br/></span><span style="color: rgb(100, 127, 17);">@NgModule</span><span style="color: rgb(122, 139, 148);">({</span><span style="color: rgb(92, 112, 122);"><br/>
+  imports</span><span style="color: rgb(122, 139, 148);">:</span><span style="color: rgb(92, 112, 122);"> </span><span style="color: rgb(122, 139, 148);">[</span><span style="color: rgb(92, 112, 122);"><br/>
+   </span> <span style="color: rgb(212, 54, 105);">BrowserModule</span><span style="color: rgb(122, 139, 148);">,</span><span style="color: rgb(92, 112, 122);"><br/>
+   </span> <span style="color: rgb(212, 54, 105);">FormsModule</span><span style="color: rgb(122, 139, 148);">,</span><span style="color: rgb(92, 112, 122);"><br/>
+    routing<br/>
+ </span> <span style="color: rgb(122, 139, 148);">],</span><span style="color: rgb(92, 112, 122);"><br/></span><span style="color: rgb(122, 139, 148);">})</span><span style="color: rgb(92, 112, 122);"><br/></span><span style="color: rgb(212, 54, 105);">export</span><span style="color: rgb(92, 112, 122);"> </span><span style="color: rgb(212, 54, 105);">class</span><span style="color: rgb(92, 112, 122);"> </span><span style="color: rgb(212, 54, 105);">AppModule</span><span style="color: rgb(92, 112, 122);"> </span><span style="color: rgb(122, 139, 148);">{</span><span style="color: rgb(92, 112, 122);"><br/></span><span style="color: rgb(122, 139, 148);">}</span></code></div>
+</div>
+<div><i><b>(4)Tell where to render component</b></i></div>
+<div>Putting router-outlet in the template, the hit component will be rendered right below &lt;router-outlet&gt;</div>
+<div>
+<div style="overflow: auto; margin-top: 0px; width: auto; position: relative; margin-bottom: 24px; border-radius: 4px; padding: 16px 32px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(245, 246, 247);">
+<div>
+<div style="overflow: auto; font-family: Monaco, &quot;Lucida Console&quot;, monospace; font-size: 13px; margin-top: 0px; color: rgb(92, 112, 122); width: auto; position: relative; margin-bottom: 24px; border-radius: 4px; padding: 16px 32px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(245, 246, 247);"><code style="font-family: Monaco, &quot;Lucida Console&quot;, monospace; font-size: 13px; border-radius: 2px; color: rgb(92, 112, 122); padding: 0px; background: none;"><span style="color: rgb(212, 54, 105);">template</span><span style="color: rgb(122, 139, 148);">:</span><span style="color: rgb(92, 112, 122);"> </span><span style="color: rgb(100, 127, 17);">`<br/>
+   &lt;h1&gt;{{title}}&lt;/h1&gt;<br/>
+   &lt;a routerLink="/heroes"&gt;Heroes&lt;/a&gt;<br/>
+   &lt;router-outlet&gt;&lt;/router-outlet&gt;</span></code><div><span style="background-color: initial;"><span style="color: rgb(100, 127, 17);">
+ `</span></span></div></div>
+</div>
+</div>
+</div><div>Q</div><div>How to embed parameter into router?</div><div>A</div><div>=&gt;Using ":" to add on to the URL</div><div>=&gt;path 'pathName/:params'</div><div>Ex:</div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>  {</div><div>  path : 'detail/:id',</div><div>  component : HeroDetailComponent</div><div>  }</div></div></div><div><br/></div><div>Q</div><div>How to get the param's value?</div><div>A</div><div><i><b>(1) Import ActivatedRoute service</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>import { ActivatedRoute, Params } from '@angular/router';</div></div></div><div><br/></div><div><i><b>(2) Inject ActivatedRoute service</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>  constructor (</div><div>  private heroService : HeroService,</div><div>  private route : ActivatedRoute){</div><div><br/></div><div>  }</div></div></div><div><br/></div><div><i><b>(3) Apply forEach to this.route.params to get wanted params</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>this.route.params.forEach((params : Params) =&gt; {</div><div>  console.log(params, "======&gt;")</div><div>  let id = +params['id'];</div><div>  this.heroService.getHero(id)</div><div>  .then(hero =&gt; this.hero = hero);</div><div>  });</div></div></div><div><br/></div><div><br/></div><div>Q</div><div>How to make router to go to certain route?</div><div>A</div><div><b><i>(1) import router service and inject it to constructor</i></b></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>import { Router } from '@angular/router';</div><div>constructor (private heroService : HeroService,</div><div>  private router : Router) {}</div></div></div><div><br/></div><div><br/></div><div><i><b>(2) Define the link</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>let link = ['/detail', hero.id];</div></div></div><div><br/></div><div><i><b>(3) let router navigate to that link</b></i></div><div><b><br/></b></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>this.router.navigate(link);</div></div></div><div><b><br/></b></div><div><b><span style="font-size: 24px;"><br/></span></b></div><div><b style="font-size: 24px;font-family:gotham, helvetica, arial, sans-serif;">HTML &amp; CSS</b></div><div><br/></div><div>Q</div><div>How to include an HTML file and CSS file into component?</div><div>A</div><div><i><b>(1) Create a html file or css file. Name it as name.component.html or name.component.css</b></i></div><div><i><b>(2) create templateUrl and styleUrls attribute in decorator. </b></i></div><div>=&gt;templateUrl is just a string of url, while </div><div>=&gt;styleUrl is an array of strings of urls</div><div>Ex:</div><div>@Component({
+</div><div>  selector : 'my-dashboard',
+</div><div>  styleUrls : ['app/dashboard.component.css'],
+</div><div>  templateUrl : 'app/dashboard.component.html'
+</div><div>})</div><div><br/></div><div><br/></div><div><b style="font-size: 24px;font-family:gotham, helvetica, arial, sans-serif;">Http Service</b></div><div><br/></div><div>Q</div><div>How to register Http service?</div><div>A</div><div>// in app.module.ts</div><div><i><b>(1)import http service. we need HttpModule to make api calls.</b></i></div><div>import { HttpModule }     from '@angular/http';</div><div><br/></div><div><i><b>(2)register it under imports</b></i></div><div>  imports: [
+</div><div>    BrowserModule,
+</div><div>    FormsModule,
+</div><div>    routing,
+</div><div>  </div><div>  ],</div><div><br/></div><div>Q<span style="line-height: 20.3px;">HttpModule</span></div><div>How to use http request in angular2?</div><div>A</div><div><i><b>(1)Import necessarty library:</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>import { Headers, Http, Response } from '@angular/http';</div><div>import 'rxjs/add/operator/toPromise';</div></div></div><div><br/></div><div><br/></div><div><i><b>(2)Register it to constructor:</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>constructor(private http : Http) {}</div></div></div><div><br/></div><div><br/></div><div><i><b>(3)Make the http call</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>getHeroes () : Promise&lt;Hero[]&gt; {</div><div>  return this.http.get(this.heroesUrl)</div><div>  .toPromise()</div><div>  .then(response =&gt; response.json().data as Hero[])</div><div>  .catch(this.handleError);</div><div>  }</div></div></div><div><br/></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>  private post (hero : Hero) : Promise&lt;Hero&gt; {</div><div>  let headers = new Headers ({</div><div>  'Content-Type' : 'application/json'</div><div>  });</div><div><br/></div><div>  return this.http</div><div>  .post(this.heroesUrl, JSON.stringify(hero), {headers:headers})</div><div>  .toPromise()</div><div>  .then(res =&gt; res.json().data)</div><div>  .catch(this.handleError);</div><div>  }</div><div><br/></div><div>  private put (hero : Hero) : Promise&lt;Hero&gt; {</div><div>  let headers = new Headers();</div><div>  headers.append('Content-Type', 'application/json');</div><div><br/></div><div>  let url = `${this.heroesUrl}/${hero.id}`;</div><div><br/></div><div>  return this.http</div><div>  .put(url, JSON.stringify(hero), {headers : headers})</div><div>  .toPromise()</div><div>  .then(()=&gt;hero)</div><div>  .catch(this.handleError);</div><div>  }</div><div><br/></div><div>  delete(hero: Hero): Promise&lt;Response&gt; {</div><div>  let headers = new Headers();</div><div>  headers.append('Content-Type', 'application/json');</div><div><br/></div><div>  let url = `${this.heroesUrl}/${hero.id}`;</div><div><br/></div><div>  return this.http</div><div>  .delete(url, {headers: headers})</div><div>  .toPromise()</div><div>  .catch(this.handleError);</div><div>  }</div><div><br/></div><div>  save(hero: Hero): Promise&lt;Hero&gt; {</div><div>  if (hero.id) {</div><div>  return this.put(hero);</div><div>  }</div><div>  return this.post(hero);</div><div>  }</div></div></div><div><br/></div><div><br/></div><div>Q</div><div>How to create a mock server for http request?</div><div>A</div><div>=&gt;Why (we need to mock)?</div><div>Sometimes for developemnt purpose, we do not have a server ready, so we need to mock a server, specifying </div><div>what will be returned  when certain end point is hit.</div><div><br/></div><div>=&gt;How (to mock the server)?</div><div>[Basic Idea]</div><div>The idea is to replace the backend service and data source with our own service and datasource. </div><div>So whenever a api request is made, it will hit ion our own defined service. </div><div><br/></div><div><b><i>(1)include necessary modules</i></b></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>import { XHRBackend } from '@angular/http';</div><div>import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';</div><div>import { InMemoryDataService } from './in-memory-data.service';</div></div></div><div><b><br/></b></div><div><b><i>(2)register backend and data in provider, and spcecify the new service address</i></b></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>providers: [</div><div>  HeroService,</div><div>  { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server</div><div>  { provide: SEED_DATA, useClass: InMemoryDataService } // in-mem server data</div><div>  ],</div></div></div><div><br/></div><div><i><b>(3)define our own dataservice:</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div>//in in-memory-data.service.ts</div><div><br/></div><div>export class InMemoryDataService {</div><div><div>  createDb() {</div><div>  let heroes = [</div><div>  {id: 11, name: 'Mr. Nice'},</div><div>  {id: 12, name: 'Narco'},</div><div>  {id: 13, name: 'Bombasto'},</div><div>  {id: 14, name: 'Celeritas'},</div><div>  {id: 15, name: 'Magneta'},</div><div>  {id: 16, name: 'RubberMan'},</div><div>  {id: 17, name: 'Dynama'},</div><div>  {id: 18, name: 'Dr IQ'},</div><div>  {id: 19, name: 'Magma'},</div><div>  {id: 20, name: 'Tornado'}</div><div>  ];</div><div>  return {heroes};</div><div>  }</div><div>}</div></div></div><div><br/></div><div>=&gt;How (is the http call works)?</div><div>when we call app/heroes</div><div>it will hit the heroes in in-memory-data.service.ts and heroes will be returned. </div><div><br/></div><div><b style="font-size: 24px;font-family:gotham, helvetica, arial, sans-serif;">Interaction between Components?</b></div><div>
+
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;font-family:gotham, helvetica, arial, sans-serif;font-size:14px;width:100%;"><tbody><tr><td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;"><div/>
+</td><td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;"><div><a href="https://toddmotto.com/component-events-event-emitter-output-angular-2" rev="en_rl_minimal">https://toddmotto.com/component-events-event-emitter-output-angular-2</a></div></td></tr></tbody></table><span style="font-family:gotham, helvetica, arial, sans-serif;font-size:14px;"
+/>
+
+</div><div><br/></div><div>Q</div><div>How does component communicate with each other?</div><div>A</div><div>=&gt;Why (need to communicate)</div><div>Sometimes, when a componend did certain behavior (getting something form the db) it needs to let other related component know, like to update their view.</div><div><br/></div><div>=&gt;How (to transfer the information)?</div><div>[Basic idea] using the @output and EventEmitter</div><div>What is output?</div><div>opposite to @input, @output 
+
+<span style="color: rgb(68, 68, 68); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.5px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> decorator makes the</span><span style="color: rgb(68, 68, 68); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: 0.5px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"> property available as an event binding</span>
+
+, like:</div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>&lt;Comp (outputFunction) = "something" /&gt;</div></div></div><div><br/></div><div>what is EventEmitter?</div><div>EventEmitter will tell if defined event has happened.</div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>  @Output()</div><div>  close = new EventEmitter();</div><div><br/></div><div>goBack(savedHero: Hero = null): void {</div><div>  this.close.emit(savedHero);</div><div>  if (this.navigated) { window.history.back(); }</div><div>  }</div></div></div><div><br/></div><div>Steps:</div><div>//in Component:</div><div><i><b>(1)Include depended module:</b></i></div><div>import { EventEmitter, Output} from '@angular/core';</div><div><br/></div><div><i><b>(2)Declare and expose the property event:</b></i></div><div>@Output()
+</div><div>  close = new EventEmitter();</div><div><br/></div><div><i><b>(3)triger the event:</b></i></div><div>this.close.emit(savedHero);</div><div><br/></div><div>//in component that uses this component</div><div><i><b>(1)assign function to event</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>  &lt;my-hero-detail (close)="close($event)"&gt;&lt;/my-hero-detail&gt;</div></div></div><div><i><b><br/></b></i></div><div><i><b>(2)Define the function</b></i></div><div><br/></div><div style="-en-codeblock: true; box-sizing: border-box; padding: 8px; font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; background-color: rgb(251, 250, 248); border: 1px solid rgba(0, 0, 0, 0.14902); background-position: initial initial; background-repeat: initial initial;"><div><div>close(savedHero: Hero): void {</div><div>  this.addingHero = false;</div><div>  if (savedHero) { this.getHeroes(); }</div><div>  }</div></div></div><div><br/></div><div><br/></div><div><br/></div><div><br/></div><div><br/></div><div><br/></div><div><br/></div><div><br/></div><div>*</div><div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+</body></html>

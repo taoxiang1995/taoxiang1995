@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="124.7309112548828"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-10-09 05:26:16 +0000"/><meta name="latitude" content="34.0670733323842"/><meta name="longitude" content="-118.453021018932"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-10-09 05:26:33 +0000"/><title>React Native | Styling</title></head><body>
+<div>
+<div><b><span style="font-size: 36px;">CSS Styling</span></b></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to do styling in react native?</span></div>
+<div>A</div>
+<div>There are two ways to apply CSS:</div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:16.0857908847185%;">
+<div>StyleSheet class</div>
+<div><br/></div>
+<div>this is static.</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:83.8248436103664%;">
+<div>
+<div>=&gt;we apply styling in react native component by creating a style object. inside the object, we define different styling as fields of the object.</div>
+</div>
+<div>=&gt;apply the styling to element simply by: style={Styles.style_name}</div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">const styles = StyleSheet.create({</span></div>
+<div>
+<div><span style="color: rgb(4, 51, 255);">  container:{</span></div>
+<div><span style="color: rgb(4, 51, 255);">    flex:1,</span></div>
+<div><span style="color: rgb(4, 51, 255);">    justifyContent: 'center',</span></div>
+<div><span style="color: rgb(4, 51, 255);">    alignItems:'center'</span></div>
+<div><span style="color: rgb(4, 51, 255);">  }</span></div>
+<div><span style="color: rgb(4, 51, 255);">});</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+</div>
+<div><span style="color: rgb(4, 51, 255);">&lt;View style={styles.container}&gt;</span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>by defining an member object</div>
+<div><br/></div>
+<div><br/></div>
+<div>this is dynamic, as we can put function to define attribute.</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(4, 51, 255);">render(){</span></div>
+<div><span style="color: rgb(4, 51, 255);">    return(&lt;Text style={this.style()}&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">      {this.props.day}</span></div>
+<div><span style="color: rgb(4, 51, 255);">    &lt;/Text&gt;)</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">style(){</span></div>
+<div><span style="color: rgb(4, 51, 255);">    return {</span></div>
+<div><span style="color: rgb(4, 51, 255);">      color: this.color(),</span></div>
+<div><span style="color: rgb(4, 51, 255);">      fontWeight: this.fontWeight().toString(),</span></div>
+<div><span style="color: rgb(4, 51, 255);">      fontSize: this.fontSize(),</span></div>
+<div><span style="color: rgb(4, 51, 255);">      lineHeight: this.lineHeight()</span></div>
+<div><span style="color: rgb(4, 51, 255);">    }</span></div>
+<div><span style="color: rgb(4, 51, 255);">  }</span></div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to apply multiple styles to a single element?</span></div>
+<div>A</div>
+<div>=&gt;Add them as arrays.</div>
+<div>Ex:</div>
+<div>&lt;View style={[styles.header, this.border('yellow')]}&gt;</div>
+<div><br/></div>
+<div><span style="font-size: 18px;"><b><br/></b></span></div>
+<div><span style="font-size: 18px;"><b>Layout with flex box:</b></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">what is flex box and what is this for?</span></div>
+<div>A</div>
+<div>flex box gives a way for parent to specify the layout of its children.</div>
+<div>We will need to use flexDirection, alignItems and justifyContent to achieve the right layout.</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:16.575091575091573%;">
+<div>flexDirection</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:83.33333333333334%;">
+<div>=&gt;determine the primary axis of its layout,</div>
+<div>=&gt;Should the children be organized horizontally or vertically? the default setting is to vertically.</div>
+<div><br/></div>
+<div>Possible value:</div>
+<div>row: to organize child components horizontally.</div>
+<div>column: to organize child components vertically.</div>
+<div>Ex:</div>
+<div>&lt;View style={{flex: 1, flexDirection: 'row'}}&gt;</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>justifyContent</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;">determines the </span><strong style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial;">distribution</strong><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;"> of children along the </span><strong style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial;">primary axis</strong><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;">.</span></div>
+<div><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;">Available options are</span></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">flex-start<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">: children will be rendered at the start of the parent component</span></span></code></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">center<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">:</span></span></code><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">children will be rendered at the center of the parent component</span></span></code></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">flex-end<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">: </span></span></code><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">children will be rendered at the bottom of the parent component</span></span></code></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">space-around<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">: </span></span></code><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">children will be rendered spaced evenly</span></span></code></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">space-between<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">:</span></span></code></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>alignItems</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;">determines the </span><strong style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial;">alignment</strong><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;"> of children along the</span><strong style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial;">secondary axis</strong></div>
+<div><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;">Available options are</span></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">flex-start<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">:</span></span></code></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">center<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">:</span></span></code></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">flex-end<span style="color: rgb(72, 72, 72);"><span style="font-family: proxima-nova;">:</span></span></code></div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">stretch:</code></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the difference between justifyContent and alignItems?</span></div>
+<div>A</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:17.426273458445042%;">
+<div>justifyContent</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:82.48436103663985%;">
+<div>move element height wise</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>alignItems</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>move stuff width wise</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">how to position the component in the screen (Is there anything like bootstrap grid) ?</span></div>
+<div>A</div>
+<div>Yes, it is called flex box;</div>
+<div>We apply flex box by giving element the style: flex:1</div>
+<div>ex:</div>
+<div><span style="color: rgb(4, 51, 255);">  &lt;View style={[styles.header, this.border('yellow')]}&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">header:{</span></div>
+<div><span style="color: rgb(4, 51, 255);">    flex:1</span></div>
+<div><span style="color: rgb(4, 51, 255);">  },</span></div>
+<div><br/></div>
+<div>The flex box 1 means to take as much space as it can be.</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Since flex box don’t really have any effect (color), we can’t really see it. How can we visualize it?</span></div>
+<div>A</div>
+<div>By giving a border to the flex box:</div>
+<div>We can have a function:</div>
+<div><span style="color: rgb(4, 51, 255);">border(color){</span></div>
+<div><span style="color: rgb(4, 51, 255);">    return{</span></div>
+<div><span style="color: rgb(4, 51, 255);">      borderColor: color,</span></div>
+<div><span style="color: rgb(4, 51, 255);">      borderWidth: 4</span></div>
+<div><span style="color: rgb(4, 51, 255);">    }</span></div>
+<div><span style="color: rgb(4, 51, 255);">  }</span></div>
+<div><br/></div>
+<div>and apply it to the flex box as well:</div>
+<div>  &lt;View style={[styles.header, this.border('yellow')]}&gt;</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Is it recommended to set the size of component by setting fixed height?</span></div>
+<div>A</div>
+<div>=&gt;Setting up the layout, position the component, is not recommended to use fixed height. It is better to use flex box</div>
+<div>=&gt;for specific component, like a button, or a picture, it is okay to use fixed height. </div>
+<div><br/></div>
+<div>Q</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:15.728328865058089%;">
+<div>justifyContent</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:84.1823056300268%;">
+<div>space-around: divide the space of this component equally, so each of its child element take the space equally. </div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>flexDirection</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;In which direction to position the child component</div>
+<div>row:</div>
+<div>col:</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>alightItems</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>center: position the child component to center.</div>
+<div><br/></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>flex: number</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>relative space size of parent component.</div>
+<div>if is the only child, then flex:1 will make it takes the whole space.</div>
+<div>If is not the emu child. then it will take the size of current_flex_number/total_sum_of_children_num:</div>
+<div>child 1:  flex:3</div>
+<div>child 2:  flex:2</div>
+<div><br/></div>
+<div>then child1 takes 60%</div>
+<div>then child2 takes 40%</div>
+<div><br/></div>
+</td>
+</tr>
+</table>
+</div>
+<div><br/></div>
+</body></html>

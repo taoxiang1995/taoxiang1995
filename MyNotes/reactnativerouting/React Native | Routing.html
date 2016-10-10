@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="120.3139114379883"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-10-08 21:38:20 +0000"/><meta name="latitude" content="34.07196826713193"/><meta name="longitude" content="-118.4422400181732"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-10-09 16:45:21 +0000"/><title>React Native | Routing</title></head><body>
+<div><a href="http://blog.paracode.com/2016/01/05/routing-and-navigation-in-react-native/" rev="en_rl_small">http://blog.paracode.com/2016/01/05/routing-and-navigation-in-react-native/</a></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Why do we need routing?</span></div>
+<div>A</div>
+<div>In an app, we need to do the following things:</div>
+<ol>
+<li>to navigate</li>
+<li>to go back</li>
+<li>to undo</li>
+<li>to skip</li>
+<li>or deep linking to certain page.</li>
+</ol>
+<div>
+<table style="-evernote-table:true;border-collapse:collapse;width:100%;table-layout:fixed;margin-left:0px;">
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:100%;">
+<div>
+<div style="box-sizing: border-box; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 16px; padding: 1em; direction: ltr; color: rgb(0, 0, 0); text-shadow: rgb(255, 255, 255) 0px 1px; text-align: left; word-spacing: 0px; tab-size: 4; hyphens: none; overflow: auto; border: 1px solid rgba(51, 51, 51, 0.0980392); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; -webkit-text-stroke-width: 0px; background: rgb(249, 249, 250);"><code style="box-sizing: border-box; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; font-weight: 400; color: rgb(0, 0, 0); text-shadow: rgb(255, 255, 255) 0px 1px; text-align: left; word-spacing: normal; tab-size: 4; hyphens: none; background: transparent;"><span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&lt;</span>Navigator<br/>
+      initialRoute<span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">:</span> <span style="box-sizing: border-box; color: rgb(0, 119, 170);">this</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>state<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><br/>
+      configureScene<span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><br/>
+        <span style="box-sizing: border-box; color: rgb(0, 119, 170);">return</span> Navigator<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>SceneConfigs<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>FloatFromRight<span style="box-sizing: border-box; color: rgb(153, 153, 153);">;</span><br/>
+      <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><br/>
+      renderScene<span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span>route<span style="box-sizing: border-box; color: rgb(153, 153, 153);">,</span> navigator<span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><br/>
+        <span style="box-sizing: border-box; color: rgb(0, 119, 170);">if</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span>route<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><br/>
+          <span style="box-sizing: border-box; color: rgb(0, 119, 170);">return</span> React<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span><span style="box-sizing: border-box; color: rgb(221, 74, 104);">createElement</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span>route<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">,</span> <span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span> navigator <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">;</span><br/>
+        <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><br/>
+      <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><br/>
+    <span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">/</span><span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span></code></div>
+</div>
+</td>
+</tr>
+</table>
+<div><b><span style="font-size: 36px;"><br/></span></b></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to set up a default route?</span></div>
+<div>A</div>
+<div><code style="box-sizing: border-box; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; font-weight: 400; color: rgb(0, 0, 0); text-shadow: rgb(255, 255, 255) 0px 1px; text-align: left; word-spacing: normal; tab-size: 4; hyphens: none; background: transparent;">initialRoute<span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">:</span> <span style="box-sizing: border-box; color: rgb(0, 119, 170);">this</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>state<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span></code></div>
+<div>=&gt;initialRoute takes in a route object, later we can identify the route by route.component.</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to make navigator to display a route?</span></div>
+<div>A</div>
+<div>=&gt;When we called push function, renderScene function in the navigator will be triggered </div>
+<div>
+<div style="box-sizing: border-box; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 16px; padding: 1em; direction: ltr; color: rgb(0, 0, 0); text-shadow: rgb(255, 255, 255) 0px 1px; text-align: left; word-spacing: 0px; tab-size: 4; hyphens: none; overflow: auto; border: 1px solid rgba(51, 51, 51, 0.0980392); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; -webkit-text-stroke-width: 0px; background: rgb(249, 249, 250);"><code style="box-sizing: border-box; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; font-weight: 400; color: rgb(0, 0, 0); text-shadow: rgb(255, 255, 255) 0px 1px; text-align: left; word-spacing: normal; tab-size: 4; hyphens: none; background: transparent;"><span style="box-sizing: border-box; color: rgb(0, 119, 170);">this</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>props<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>navigator<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span><span style="box-sizing: border-box; color: rgb(221, 74, 104);">push</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><br/>
+        component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">:</span> Login<br/>
+      <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">;</span></code></div>
+</div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><code style="box-sizing: border-box; font-weight: 400; text-shadow: rgb(255, 255, 255) 0px 1px; text-align: left; word-spacing: normal; tab-size: 4; background-color: transparent; background-position: initial initial; background-repeat: initial initial;"><span style="font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;">renderScene<span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span>route<span style="box-sizing: border-box; color: rgb(153, 153, 153);">,</span> navigator<span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><br/>
+        <span style="box-sizing: border-box; color: rgb(0, 119, 170);">if</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span>route<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><br/>
+          <span style="box-sizing: border-box; color: rgb(0, 119, 170);">return</span> React<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span><span style="box-sizing: border-box; color: rgb(221, 74, 104);">createElement</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span>route<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>component<span style="box-sizing: border-box; color: rgb(153, 153, 153);">,</span> <span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span> navigator <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">;</span></span></code>
+<div><span style="font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;">        <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span></span></div>
+</div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to add transition animation?</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">A</span></div>
+<div><code style="box-sizing: border-box; font-weight: 400; text-shadow: rgb(255, 255, 255) 0px 1px; text-align: left; word-spacing: normal; tab-size: 4; background-color: transparent; background-position: initial initial; background-repeat: initial initial;"><span style="font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;">configureScene<span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">(</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">)</span> <span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">=</span><span style="box-sizing: border-box; color: rgb(166, 127, 89); background: rgba(255, 255, 255, 0.498039);">&gt;</span> <span style="box-sizing: border-box; color: rgb(153, 153, 153);">{</span><br/>
+        <span style="box-sizing: border-box; color: rgb(0, 119, 170);">return</span> Navigator<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>SceneConfigs<span style="box-sizing: border-box; color: rgb(153, 153, 153);">.</span>FloatFromRight<span style="box-sizing: border-box; color: rgb(153, 153, 153);">;</span></span></code>
+<div><span style="font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;">      <span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span><span style="box-sizing: border-box; color: rgb(153, 153, 153);">}</span></span></div>
+</div>
+<div><br/></div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="color: rgb(51, 51, 51);"><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"><span style="font-size: 28px;"><span style="font-weight: 600;">React Native Router</span></span></span></span></div>
+<div>
+<div><br/></div>
+</div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is react native router and why should we use it?</span></div>
+<div>A</div>
+<div>Why?</div>
+<div>It is super easy to use</div>
+<div>It can be used in both android and IOS</div>
+<div><br/></div>
+<div>What?</div>
+<div><a href="https://github.com/aksonov/react-native-router-flux" rev="en_rl_small">https://github.com/aksonov/react-native-router-flux</a></div>
+<div><span style="color: rgb(51, 51, 51);"><code style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px;">react-native-router-flux</code><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"><span style="font-size: 16px;"> is a routing package that allows you to:</span></span></span></div>
+<div>
+<ul style="box-sizing: border-box; padding-left: 2em; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+<li style="box-sizing: border-box;">Define scene transitions in one central location</li>
+<li style="box-sizing: border-box;">Without having to pass navigator objects around, and allow you to</li>
+<li style="box-sizing: border-box;">Call transitions anywhere in your code with a simple syntax (e.g. <code style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px;">Actions.login({username, password})</code> or<code style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px;">Actions.profile({profile})</code> or even <code style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px;">Actions.profile(123)</code> - all params will be part of <code style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px;">this.props</code> for given Scene component).</li>
+</ul>
+</div>
+<div><br/></div>
+<div>Usage:</div>
+<div><a href="https://github.com/aksonov/react-native-router-flux/blob/master/docs/API_CONFIGURATION.md" rev="en_rl_small">https://github.com/aksonov/react-native-router-flux/blob/master/docs/API_CONFIGURATION.md</a></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:20.87912087912088%;">
+<div>How does it works?</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:79.02930402930403%;">
+<div>We register all the scene in the navigationRouter file:</div>
+<div>later we can use the functions provided by Action to navigate to or pop to any scene (page)</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>What is Scene?</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;Scene is like a page or screen.</div>
+<div>=&gt;It normally defined in the container folder, using <span style="color: rgb(51, 51, 51);"><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';"><span style="font-size: 16px;"><span style="font-weight: 600;"><code style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px;">ignite generate screen Settings</code></span></span></span></span></div>
+<div><span style="background-color: rgba(0, 0, 0, 0.0392157);"><font color="#333333" face="Consolas, Liberation Mono, Menlo, Courier, monospace"><span style="font-weight: 600;">=&gt;We need to register scene inside of router in the avigatinruter file:</span></font></span></div>
+<div><span style="font-weight: 600;"><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><span style="background-color: rgba(0, 0, 0, 0.0392157);"><span style="color: rgb(51, 51, 51);">for each scene, we need to at least procide</span></span></span></span></div>
+<div><span style="font-weight: 600;"><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><span style="background-color: rgba(0, 0, 0, 0.0392157);"><span style="color: rgb(51, 51, 51);">(1) A unique string name to refer to</span></span></span></span></div>
+<div><span style="font-weight: 600;"><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><span style="background-color: rgba(0, 0, 0, 0.0392157);"><span style="color: rgb(51, 51, 51);">(2) the component name to render (container)</span></span></span></span></div>
+<div><span style="font-weight: 600;"><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><span style="background-color: rgba(0, 0, 0, 0.0392157);"><span style="color: rgb(51, 51, 51);">(3) title (a string) appear in the nav bar.</span></span></span></span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>The structure of the definition of the router?</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>&lt;Router&gt;</div>
+<div>  &lt;Scene&gt;</div>
+<div>    &lt;Scene&gt;&lt;/Scene&gt;</div>
+<div>    &lt;Scene&gt;&lt;/Scene&gt;</div>
+<div>  &lt;/Scene&gt;</div>
+<div>&lt;/Router&gt;</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>How to go to a certain page?</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>
+<div style="box-sizing: border-box; font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; padding: 16px; overflow: auto; background-color: rgb(247, 247, 247); border-radius: 3px; color: rgb(51, 51, 51); letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+<div><span style="box-sizing: border-box; color: rgb(51, 51, 51);">Actions</span>.<span style="box-sizing: border-box; color: rgb(121, 93, 163);">ROUTE_NAME</span>({type<span style="box-sizing: border-box; color: rgb(167, 29, 93);">:</span> <span style="box-sizing: border-box; color: rgb(24, 54, 145);"><span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span>reset<span style="box-sizing: border-box; color: rgb(24, 54, 145);">'</span></span>});</div>
+<div>//pass in the props that this scene needed to render</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>How to go back to the previoius scene?</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(51, 51, 51); font-family: Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(0, 0, 0, 0.0392157); text-decoration-style: initial; text-decoration-color: initial; float: none;">Actions.pop()</span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>How does it work with ignite?</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>define scene in the NavigationRouter file</div>
+<div><br/></div>
+<div>in any file we want to use the action, include:</div>
+<div>import { Actions as NavigationActions } from 'react-native-router-flux'</div>
+<div>then</div>
+<div>&lt;RoundedButton onPress={NavigationActions.productsPage2}&gt;</div>
+<div>            Products Page</div>
+<div>&lt;/RoundedButton&gt;</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+</body></html>

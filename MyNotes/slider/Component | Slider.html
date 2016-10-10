@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="84.60591125488281"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-08-20 04:27:32 +0000"/><meta name="latitude" content="34.05392745240049"/><meta name="longitude" content="-118.4405951180672"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-08-20 05:36:05 +0000"/><title>Component | Slider</title></head><body>
+<div><img src="Component%20%7C%20Slider.resources/744BF6B3-41CE-4C70-8020-CB63992C9CBD.png" height="797" width="1430"/></div>
+<div><br/></div>
+<div><span style="font-size: 24px;"><b>Key features explanation:</b></span></div>
+<div><br/></div>
+<div>(1) two sliders, one at bottom one at middle</div>
+<div>(2) able to slide new background image in with animation.</div>
+<div>(3) each slide contains text slider</div>
+<div>(4) slider toggles have animation when switching</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to make animation when toggle switch from one point to another?</span></div>
+<div>A</div>
+<div><img src="Component%20%7C%20Slider.resources/D3A1D32B-F5E5-4457-ABDD-D6C09288BD2C.png" height="108" width="405"/></div>
+<div>[Basic Idea]</div>
+<div><i><b>(1) create a bigger toggle on top of current toggle</b></i></div>
+<div><i><b>(2) create two variables to store the current position and target position of toggle</b></i></div>
+<div><i><b>(3) when toggle clicked, use .animate( ) function to move toggle from current position to target position, at the same time, change it size</b></i></div>
+<div>=&gt;middle position =&gt; target position =&gt; resize</div>
+<div>
+<div><span style="color: rgb(4, 51, 255);">$('#selector').animate({ width: '20px', height: '5px', left: CenterPxs + 'px', top: '2px' }, 200, function () {</span></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#selector').animate({ width: '18px', height: '18px', left: EndPxs + 'px', top: '-4px' }, 100, function () {</span></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#selector').animate({ width: '14px', height: '14px', top: '-2px' }, 100) }) })</span></div>
+</div>
+<div><span style="color: rgb(4, 51, 255);">}</span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to implement the slides feature? when toggle clicked, move from current scene to another scene?</span></div>
+<div>A</div>
+<div>[Basic Idea]</div>
+<div>Have two div, one for current scene, one for new scene. </div>
+<div>when toggle clicked, position the new scene to the left or right of the screen (depending on which direction we want the scene to slide)</div>
+<div><br/></div>
+<div>Steps:</div>
+<div><i><b>(1) position nextSlide to the right (or left) of the screen and show it.</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#nextVideo').css('right', screenWidth + 'px');</span></div>
+<div><span style="color: rgb(4, 51, 255);">        $('#nextVideo').show();</span></div>
+<div><i><b>(2) move nextSlide to the center of screen</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">$('#nextVideo').animate({ right: '0px' }, time, 'linear');</span></div>
+<div><i><b>(3) move curSlide left (or right) a little bit (to create a feel of movement)</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">$('#curVideo').animate({ right: '-100px' }, time, 'linear', function () { setCurSeason(id); showSliderText(id); });</span></div>
+<div><span style="color: rgb(4, 51, 255);">      }</span></div>
+<div><i><b>(4) make nextSlide currentSlide, make currentSlide nextSlide and change their Z-index</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#curVideo').attr('id', 'nextVideoNew');</span></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#nextVideo').attr('id', 'curVideo');</span></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#nextVideoNew').attr('id', 'nextVideo');</span></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#nextVideo').hide();</span></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#curVideo').css('z-index', '0');</span></div>
+<div><span style="color: rgb(4, 51, 255);">  $('#nextVideo').css('z-index', '1');</span></div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to implement the text slider?</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><br/></span></div>
+<div><img src="Component%20%7C%20Slider.resources/DBCBFDB4-737E-450D-A2EC-05527F0217F1.png" height="154" width="328"/></div>
+<div>A</div>
+<div><i><b>(1) Construct the basic html structure: one slider container and two text containers. And slider controls</b></i></div>
+<div><span style="color: rgb(4, 51, 255);">  &lt;div class="seasonTextContainer"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="textContainer1" style="display: none;"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">                  &lt;div class="textContainer engBold"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">                  &lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="textContainer2" style="display: none;"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">                  &lt;div class="textContainer engBold"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">                  &lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="seasonTextSlider"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">                  &lt;div id="selectorSeason"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">                  &lt;div id="sBullet1" onclick="toggleSliderText()"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">                  &lt;div id="sBullet1" onclick="toggleSliderText()"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">     &lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">        &lt;div id="seasonSliderControls"&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="selector"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="bullet1" onclick="setSeason(1)"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="bullet2" onclick="setSeason(2)"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="bullet3" onclick="setSeason(3)"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="bullet4" onclick="setSeason(4)"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="bullet5" onclick="setSeason(5)"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">              &lt;div id="bullet6" onclick="setSeason(6)"&gt;&lt;/div&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">         &lt;/div&gt;</span></div>
+<div><i><b>(2) move current text to left, and set it opacity to 0</b></i></div>
+<div>$('#textContainer1').animate({</div>
+<div>    marginLeft: "-500px"</div>
+<div>    }, 300, 'easeInExpo')</div>
+<div>$('#textContainer1 .textContainer').animate({</div>
+<div>    opacity: "0"</div>
+<div>    }, 300, 'easeInExpo', function () {</div>
+<div>   </div>
+<div><i><b>(3) after hiding it, set its position back</b></i></div>
+<div>
+<div>$("#textContainer1").hide();</div>
+</div>
+<div>    $("#textContainer1").css("margin-left", "0");</div>
+<div><br/></div>
+<div><i><b>(4) set next text container’s padding to right</b></i></div>
+<div>$("#textContainer2").show();</div>
+<div>    $('#textContainer2 .textContainer').animate({</div>
+<div>    opacity: "1"</div>
+<div>    }, 300, 'easeInExpo')</div>
+<div><br/></div>
+<div><i><b>(5) show it, move it back to center and set opacity back to 1</b></i></div>
+<div>$('#textContainer2').animate({</div>
+<div>    paddingLeft: "0"</div>
+<div>    }, 300, 'easeInExpo')</div>
+<div>    }, 300)</div>
+<div>    })</div>
+<div><br/></div>
+<div>a</div>
+</body></html>

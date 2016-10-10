@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="88.81108856201172"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-07-24 00:45:29 +0000"/><meta name="latitude" content="34.05680805326244"/><meta name="longitude" content="-118.4457340548975"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-10-09 05:56:23 +0000"/><title>React Native | Basic</title></head><body>
+<div><span style="font-size: 36px;"><b>React Native App Set Up</b></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to start a react native app?</span></div>
+<div>A</div>
+<div>=&gt;react native has a really nice command line tool.</div>
+<div>=&gt;we can start a react native project simply by:</div>
+<div><span style="color: rgb(4, 51, 255);">react-native init pro_</span><span style="color: rgb(4, 51, 255);">names</span></div>
+<div>in the command line</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to run a simulator?</span></div>
+<div>A</div>
+<div>There are 2 ways to run a simulators.</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:19.928507596067917%;">
+<div>using .xcodeproj file</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:79.98212689901698%;">
+<div>double click it</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>using command line</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>react-native run-ios</div>
+<div>react-native run-android</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to fix the problem that could not find a certain npm module?</span></div>
+<div>A</div>
+<div>install it locally by :</div>
+<div>npm install module_name</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the architecture of react native?</span></div>
+<div>A</div>
+<div><img src="React%20Native%20%7C%20Basic.resources/F3D41833-1A61-4995-82B4-6122ABA94245.png" height="451" width="1321"/></div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to handle following problems?</span></div>
+<div><span style="color: rgb(255, 38, 0);">watchman--no-pretty get-sockname returned with exit code 1 ERROR: Unknown option</span></div>
+<div>A</div>
+<div>It is because we can not install the watchman via npm.</div>
+<div>so we need to do:</div>
+<div>npm r -g watchman</div>
+<div>brew update</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is the basic boilerplate for react-native iOS component?</span></div>
+<div>A</div>
+<div>Basically, a component file has 4 distinct sections:</div>
+<ol>
+<li>importing: import the libraries we need</li>
+<li>Defining: create our component</li>
+<li>Styling: style our component</li>
+<li>Exporting: make this code available else where.</li>
+</ol>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:24.128686327077748%;">
+<div>import libraries</div>
+<div><br/></div>
+<div>text is like &lt;p&gt;</div>
+<div>view is like &lt;div&gt;</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:75.78194816800715%;">
+<div><span style="color: rgb(4, 51, 255);">import React, {</span></div>
+<div><span style="color: rgb(4, 51, 255);">  AppRegistry,</span></div>
+<div><span style="color: rgb(4, 51, 255);">  Component,</span></div>
+<div><span style="color: rgb(4, 51, 255);">  StyleSheet,</span></div>
+<div><span style="color: rgb(4, 51, 255);">  Text,</span></div>
+<div><span style="color: rgb(4, 51, 255);">  View</span></div>
+<div><span style="color: rgb(4, 51, 255);">} from 'react-native';</span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>define the component class</div>
+<div><br/></div>
+<div><br/></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(4, 51, 255);">class Weekdays extends Component{</span></div>
+<div><span style="color: rgb(4, 51, 255);">  render(){</span></div>
+<div><span style="color: rgb(4, 51, 255);">    return(</span></div>
+<div><span style="color: rgb(4, 51, 255);">      &lt;View style={styles.container}&gt; </span></div>
+<div><span style="color: rgb(4, 51, 255);">        &lt;Text&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">          Days of the week:</span></div>
+<div><span style="color: rgb(4, 51, 255);">        &lt;/Text&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">      &lt;/View&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">    );</span></div>
+<div><span style="color: rgb(4, 51, 255);">  }</span></div>
+<div><span style="color: rgb(4, 51, 255);">}</span></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>style the component</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>const styles = StyleSheet.create({</div>
+<div>  container:{</div>
+<div>    flex:1,</div>
+<div>    justifyContent: 'flex-end', //move element height wise</div>
+<div>    alignItems:'center' //move stuff width wise</div>
+<div>  }</div>
+<div>});</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>render component to screen</div>
+<div>'weekdays' is the name of application</div>
+<div>()=&gt;Weekdays</div>
+<div>defines a function that returns defined class component Weekdays.</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><span style="color: rgb(4, 51, 255);">AppRegistry.registerComponent('weekdays', () =&gt; Weekdays);</span></div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to do debugging in react native?</span></div>
+<div>A</div>
+<div>=&gt;press command D in the Xcode simulator</div>
+<div>=&gt;choose to debug remotely</div>
+<div>=&gt;in the screen press: command J to start the debugging window in the chrome.</div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="font-size: 36px;"><b>Basic Components</b></span></div>
+<div><br/></div>
+<div><u><i><b><span style="font-size: 18px;">Text Input</span></b></i></u></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is textInput component and why do we need it?</span></div>
+<div>A</div>
+<div>=&gt;textInput is a react native component.</div>
+<div>=&gt;It allows user to type in text and have two factions:</div>
+<div>=&gt;function called when text changes, </div>
+<div>=&gt;unction called when submit. </div>
+<div><a href="https://facebook.github.io/react-native/docs/textinput.html" rev="en_rl_small">https://facebook.github.io/react-native/docs/textinput.html</a></div>
+<div>Ex:</div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;width:100%;table-layout:fixed;margin-left:0px;">
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:100%;">
+<div>
+<div>class UselessTextInput extends Component {</div>
+<div>  constructor(props) {</div>
+<div>    super(props);</div>
+<div>    this.state = { text: 'Useless Placeholder' };</div>
+<div>  }</div>
+<div><br/></div>
+<div>  render() {</div>
+<div>    return (</div>
+<div>      &lt;TextInput</div>
+<div>        style={{height: 40, borderColor: 'gray', borderWidth: 1}}</div>
+<div>        onChangeText={(text) =&gt; this.setState({text})}</div>
+<div>        value={this.state.text}</div>
+<div>      /&gt;</div>
+<div>    );</div>
+<div>  }</div>
+</div>
+<div>}</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><span style="font-size: 18px;"><u><i><b>ScrollView</b></i></u></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is ScrollView and why do we need it?</span></div>
+<div>A</div>
+<div>=&gt;scrollView is a generic container that can hosts multiple components and views.</div>
+<div>=&gt;You can scroll both horizontally and vertically. </div>
+<div>=&gt;scrollView will render the whole view no matter is show on the screen or not. </div>
+<div>Ex:</div>
+<table style="-evernote-table:true;border-collapse:collapse;width:100%;table-layout:fixed;margin-left:0px;">
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:100%;">
+<div>
+<div>import React, { Component } from 'react';</div>
+<div>import{ AppRegistry, ScrollView, Image, Text, View } from 'react-native'</div>
+<div><br/></div>
+<div>class IScrolledDownAndWhatHappenedNextShockedMe extends Component {</div>
+<div>  render() {</div>
+<div>      return(</div>
+<div>        &lt;ScrollView&gt;</div>
+<div>          &lt;Text style={{fontSize:96}}&gt;Scroll me plz&lt;/Text&gt;</div>
+<div>          &lt;Image source={require('./img/favicon.png')} /&gt;</div>
+<div>          &lt;Image source={require('./img/favicon.png')} /&gt;</div>
+<div>          &lt;Image source={require('./img/favicon.png')} /&gt;</div>
+<div>          &lt;Image source={require('./img/favicon.png')} /&gt;</div>
+<div>          &lt;Image source={require('./img/favicon.png')} /&gt;</div>
+<div>          &lt;Text style={{fontSize:96}}&gt;If you like&lt;/Text&gt;</div>
+<div>        &lt;/ScrollView&gt;</div>
+<div>    );</div>
+<div>  }</div>
+</div>
+<div>}</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><span style="font-size: 18px;"><u><i><b>ListView</b></i></u></span></div>
+<div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+</div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is ListView and why do we need it?</span></div>
+<div>A</div>
+<div><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;">The </span><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); background-color: rgba(0, 0, 0, 0.0392157); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">ListView</code><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(245, 252, 255); text-decoration-style: initial; text-decoration-color: initial; float: none;"> component displays a vertically scrolling list of changing, but similarly structured, data.</span></div>
+<div><span style="font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="background-color: rgb(245, 252, 255);"><span style="color: rgb(72, 72, 72);">ListView requires two props:</span></span></span></div>
+<div><span style="font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="background-color: rgb(245, 252, 255);"><span style="color: rgb(72, 72, 72);">=&gt;dataSource: it is the source of information of the lists</span></span></span></div>
+<div><font color="#484848" face="proxima-nova">=&gt;renderRow: takes in one item from the source and return a component (JSX) to render.</font></div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;width:100%;table-layout:fixed;margin-left:0px;">
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:100%;">
+<div>import React, { Component } from 'react';</div>
+<div>import { AppRegistry, ListView, Text, View } from 'react-native';</div>
+<div><br/></div>
+<div>class ListViewBasics extends Component {</div>
+<div>  // Initialize the hardcoded data</div>
+<div>  constructor(props) {</div>
+<div>    super(props);</div>
+<div>    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) =&gt; r1 !== r2});</div>
+<div>    this.state = {</div>
+<div>      dataSource: ds.cloneWithRows([</div>
+<div>        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'</div>
+<div>      ])</div>
+<div>    };</div>
+<div>  }</div>
+<div>  render() {</div>
+<div>    return (</div>
+<div>      &lt;View style={{paddingTop: 22}}&gt;</div>
+<div>        &lt;ListView</div>
+<div>          dataSource={this.state.dataSource}</div>
+<div>          renderRow={(rowData) =&gt; &lt;Text&gt;{rowData}&lt;/Text&gt;}</div>
+<div>        /&gt;</div>
+<div>      &lt;/View&gt;</div>
+<div>    );</div>
+<div>  }</div>
+<div>}</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><span style="font-size: 36px;"><b>IOS Native Map</b></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to import a map in to iOS app?</span></div>
+<div>A</div>
+<div>In react-native, there is a component called MapView, we simply import that and used it as an component.</div>
+<div>Ex:</div>
+<div><span style="color: rgb(4, 51, 255);">import MapView from react-native</span></div>
+<div><span style="color: rgb(4, 51, 255);"><br/></span></div>
+<div><span style="color: rgb(4, 51, 255);">class weather extends Component {</span></div>
+<div><span style="color: rgb(4, 51, 255);">  render() {</span></div>
+<div><span style="color: rgb(4, 51, 255);">    return (</span></div>
+<div><span style="color: rgb(4, 51, 255);">      &lt;MapView style={styles.map} /&gt;</span></div>
+<div><span style="color: rgb(4, 51, 255);">    );</span></div>
+<div><span style="color: rgb(4, 51, 255);">  }</span></div>
+<div><span style="color: rgb(4, 51, 255);">}</span></div>
+<div><br/></div>
+<div>Q</div>
+<div>How to get the center location of the map?</div>
+<div>A</div>
+<div><br/></div>
+<div><span style="font-size: 36px;"><b>AsyncStorage</b></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What is AsyncStorage?</span></div>
+<div>A</div>
+<div><code style="box-sizing: border-box; border: none; padding: 1px 3px; color: rgb(85, 85, 85); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(0, 0, 0, 0.0392157);">AsyncStorage</code><span style="color: rgb(72, 72, 72); font-family: proxima-nova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgb(245, 252, 255);"> is a simple, unencrypted, asynchronous, persistent, key-value storage system that is global to the app. It should be used instead of LocalStorage.</span></div>
+<div><span style="font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="background-color: rgb(245, 252, 255);"><span style="color: rgb(72, 72, 72);"><br/></span></span></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="background-color: rgb(245, 252, 255);"><span style="color: rgb(72, 72, 72);">Q</span></span></span></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="background-color: rgb(245, 252, 255);"><span style="color: rgb(72, 72, 72);">How to use AsyncStorage? Basically, how to store and read data</span></span></span></span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"><span style="font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="background-color: rgb(245, 252, 255);"><span style="color: rgb(72, 72, 72);">A</span></span></span></span></div>
+<div><a href="https://facebook.github.io/react-native/docs/asyncstorage.html" rev="en_rl_small">https://facebook.github.io/react-native/docs/asyncstorage.html</a></div>
+<div>Insert:</div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(25, 144, 184); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">try</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">{</span></div>
+<div><span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">     await AsyncStorage</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">.</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">setItem<span style="box-sizing: border-box; border: none; padding: 0px;">(</span></span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'@MySuperStore:key'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">,</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'I like to save it.'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">;</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(25, 144, 184); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">catch</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">(</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">error</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">{</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(125, 139, 153); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">     // Error saving data</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span></div>
+<div><span style="font-size: 13px;"><span style="font-family: source-code-pro, Menlo, 'Courier New', Consolas, monospace;"><span style="color: rgb(72, 72, 72);">get:</span></span></span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(25, 144, 184); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">try</span> <span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">{</span></div>
+<div><span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">     const value</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">=</span><span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">await AsyncStorage</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">.</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">getItem<span style="box-sizing: border-box; border: none; padding: 0px;">(</span></span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(47, 156, 10); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">'@MySuperStore:key'</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">;</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(25, 144, 184); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">     if</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">(</span><span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">value</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">!</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">==</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(25, 144, 184); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">null</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">     {</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(125, 139, 153); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">// We have data!!</span><span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">console</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">.</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">log<span style="box-sizing: border-box; border: none; padding: 0px;">(</span></span><span style="color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; float: none; background-color: rgba(5, 165, 209, 0.0470588);">value</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">;</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(25, 144, 184); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">catch</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">(</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">error</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">)</span><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">{</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(125, 139, 153); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">     // Error retrieving data</span></div>
+<div><span style="box-sizing: border-box; border: none; padding: 0px; color: rgb(72, 72, 72); font-family: source-code-pro, Menlo, &quot;Courier New&quot;, Consolas, monospace; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">}</span></div>
+<div><br/></div>
+</body></html>

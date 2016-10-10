@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="84.47355651855469"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-08-13 22:12:57 +0000"/><meta name="latitude" content="34.05395673155721"/><meta name="longitude" content="-118.4405706671656"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-08-15 03:34:55 +0000"/><title>React Native | Firebase</title></head><body>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to use firebase in react native application?</span></div>
+<div>A</div>
+<div>(1) Install firebase to your app:</div>
+<div>
+<div style="box-sizing: inherit; border: 1px solid rgb(136, 136, 136); padding: 2px; overflow: auto; font-size: 14px; font-family: &quot;Roboto Mono&quot;, monospace; color: rgb(55, 71, 79); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(247, 247, 247);"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">npm install firebase </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">--</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">save</span></div>
+</div>
+<div>(2)</div>
+<div>set up firebase to your app:</div>
+<div>=&gt;include in index.os.js:</div>
+<div>
+<div style="box-sizing: inherit; border: 1px solid rgb(136, 136, 136); padding: 2px; overflow: auto; font-size: 14px; font-family: &quot;Roboto Mono&quot;, monospace; color: rgb(55, 71, 79); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(247, 247, 247);"><span style="box-sizing: inherit; color: rgb(0, 0, 0);">import </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">*</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> as firebase from </span><span style="box-sizing: inherit; color: rgb(13, 144, 79);">'firebase'</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">;</span></div>
+</div>
+<div>=&gt;initialize firebase:</div>
+<div>
+<div style="box-sizing: inherit; border: 1px solid rgb(136, 136, 136); padding: 2px; overflow: auto; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 247); background-position: initial initial; background-repeat: initial initial;"><span style="font-family: 'Roboto Mono', monospace;"><span style="box-sizing: inherit; color: rgb(59, 120, 231);">const</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> firebaseConfig </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">=</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">{</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"><br/>
+  apiKey</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> </span><span style="box-sizing: inherit; color: rgb(13, 144, 79);">"&lt;your-api-key&gt;"</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">,</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"><br/>
+  authDomain</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> </span><span style="box-sizing: inherit; color: rgb(13, 144, 79);">"&lt;your-auth-domain&gt;"</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">,</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"><br/>
+  databaseURL</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> </span><span style="box-sizing: inherit; color: rgb(13, 144, 79);">"&lt;your-database-url&gt;"</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">,</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"><br/>
+  storageBucket</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> </span><span style="box-sizing: inherit; color: rgb(13, 144, 79);">"&lt;your-storage-bucket&gt;"</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">,,</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"><br/></span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">};</span></span>
+<div><span style="font-family: 'Roboto Mono', monospace;"><span style="box-sizing: inherit; color: rgb(59, 120, 231);">const</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> firebaseApp </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">=</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> firebase</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">initializeApp</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">(</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">firebaseConfig</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">);</span></span></div>
+</div>
+</div>
+<div>(3)</div>
+<div>Create real time database reference in the constructor:</div>
+<div>
+<div style="box-sizing: inherit; border: 1px solid rgb(136, 136, 136); padding: 2px; overflow: auto; font-size: 14px; font-family: &quot;Roboto Mono&quot;, monospace; color: rgb(55, 71, 79); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(247, 247, 247);"><span style="box-sizing: inherit; color: rgb(59, 120, 231);">this</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">itemsRef </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">=</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> firebaseApp</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">database</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">().</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">ref</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">();</span></div>
+</div>
+<div><br/></div>
+<div>(4)</div>
+<div>CRUD operations:</div>
+<div>=&gt;read:</div>
+<div>
+<pre style="box-sizing: inherit; border: 1px solid rgb(136, 136, 136); padding: 2px; overflow: auto; font-size: 14px; font-family: &quot;Roboto Mono&quot;, monospace; color: rgb(55, 71, 79); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(247, 247, 247);">
+<span style="box-sizing: inherit; color: rgb(0, 0, 0);">itemsRef</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">on</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">(</span><span style="box-sizing: inherit; color: rgb(13, 144, 79);">'value'</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">,</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);" /><span style="box-sizing: inherit; color: rgb(102, 102, 0);">(</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">snap</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">)</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);" /><span style="box-sizing: inherit; color: rgb(102, 102, 0);">=&gt;</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);" /><span style="box-sizing: inherit; color: rgb(102, 102, 0);">{</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"
+
+      /><span style="box-sizing: inherit; color: rgb(216, 27, 96);">// get children as an array</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"
+      /><span style="box-sizing: inherit; color: rgb(59, 120, 231);">var</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> items </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">=</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);" /><span style="box-sizing: inherit; color: rgb(102, 102, 0);">[];</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">
+      snap</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">forEach</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">((</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">child</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">)</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);" /><span style="box-sizing: inherit; color: rgb(102, 102, 0);">=&gt;</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);" /><span style="box-sizing: inherit; color: rgb(102, 102, 0);">{</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">
+        items</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">push</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">({</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">
+          title</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> child</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">val</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">().</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">title</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">,</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">
+          _key</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> child</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">key
+        </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">});</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"
+      /><span style="box-sizing: inherit; color: rgb(102, 102, 0);">});</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"
+/>
+</pre></div>
+<div>=&gt;write:</div>
+<div>
+<div style="box-sizing: inherit; border: 1px solid rgb(136, 136, 136); padding: 2px; overflow: auto; font-size: 14px; font-family: &quot;Roboto Mono&quot;, monospace; color: rgb(55, 71, 79); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(247, 247, 247);">
+<div><span style="box-sizing: inherit; color: rgb(59, 120, 231);">this</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">itemsRef</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">push</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">({</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> title</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> text </span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">})</span></div>
+</div>
+</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">How to connect firebase to react native project’s state?</span></div>
+<div>A</div>
+<div>
+<div style="box-sizing: inherit; border: 1px solid rgb(136, 136, 136); padding: 2px; overflow: auto; font-size: 14px; font-family: &quot;Roboto Mono&quot;, monospace; color: rgb(55, 71, 79); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background: rgb(247, 247, 247);"><span style="box-sizing: inherit; color: rgb(59, 120, 231);">this</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">setState</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">({</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"><br/>
+        dataSource</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">:</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);"> </span><span style="box-sizing: inherit; color: rgb(59, 120, 231);">this</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">state</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">dataSource</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">.</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">cloneWithRows</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">(</span><span style="box-sizing: inherit; color: rgb(0, 0, 0);">items</span><span style="box-sizing: inherit; color: rgb(102, 102, 0);">)</span>
+<div><span style="color: rgb(0, 0, 0);">     </span> <span style="box-sizing: inherit; color: rgb(102, 102, 0);">});</span></div>
+</div>
+</div>
+<div>=&gt;What is cloneWithRows( )</div>
+<div>     because it is not encouraged to set state using previous state.</div>
+<div>     So we need to have a effiient way to clone the previous state (a list )</div>
+<div>     cloneWithRows can help us do that.</div>
+<div>=&gt;what is items?</div>
+<div>     item is an array</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Where to initialize firebase?</span></div>
+<div>A</div>
+<div>=&gt;If this app is for android or IOS only, just put it in index.ios.js or index.android.js</div>
+<div>=&gt;if for both, we can put it in main.js where both iOS and android use it.</div>
+<div>Ex:</div>
+<div>import FireBase from 'firebase';</div>
+<div><br/></div>
+<div>//initialize firebase</div>
+<div>var config = {</div>
+<div>   apiKey: "AIzaSyBmbxm9g1yO7g9e9mphyybSUTQrG-bcCp4",</div>
+<div>   authDomain: "authentication-v2.firebaseapp.com",</div>
+<div>   databaseURL: "https://authentication-v2.firebaseio.com",</div>
+<div>   storageBucket: "authentication-v2.appspot.com",</div>
+<div> };</div>
+<div>FireBase.initializeApp(config);</div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+</body></html>

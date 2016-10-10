@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 6.8 (453748)"/><meta name="altitude" content="85.52219390869141"/><meta name="author" content="xiangtao1995@gmail.com"/><meta name="created" content="2016-08-23 04:19:16 +0000"/><meta name="latitude" content="34.05406752918443"/><meta name="longitude" content="-118.4406065527082"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2016-08-23 05:01:41 +0000"/><title>React | Build Tools</title></head><body>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">Q</span></div>
+<div><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">What tools we need to build web application project?</span></div>
+<div>A</div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:19.708029197080293%;">
+<div>Compiler</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:80.18769551616268%;">
+<div>What is a compiler?</div>
+<div>=&gt;Compiler turn new javascript to old javascript</div>
+<div>=&gt;A lot of browsers does not support new version of javascript like ES 6 and ES 7 and Typescript</div>
+<div><br/></div>
+<div>Ex:</div>
+<div>Babel</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Module Bundlers</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>What is Module Bundler?</div>
+<div>=&gt;Is a tool to bundle all the files into a single file based on their dependencies.</div>
+<div><br/></div>
+<div>Ex:</div>
+<div>Browserify</div>
+<div>Webpack</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Task Runners</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>What is task runner?</div>
+<div>=&gt;Task runners are tools for defining and running tasks.Task is anything you might to do manually via command line, including compile less to css, publish new build online.etc.</div>
+<div><br/></div>
+<div>Ex:</div>
+<div>Grunt</div>
+<div>Gulp</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>dependency manager</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>What is dependency manager?</div>
+<div>=&gt;Download javascript modules based on dependencies.</div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><span style="font-size: 18px;"><b>Detailed explanation of each tools:</b></span></div>
+<div><br/></div>
+<table style="-evernote-table:true;border-collapse:collapse;margin-left:0px;table-layout:fixed;width:100%;">
+<tr>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:20.020855057351408%;">
+<div>Babel</div>
+</td>
+<td style="border: 1px solid rgb(219, 219, 219); padding: 10px; margin: 0px;width:79.87486965589156%;">
+<div>=&gt;Babel can transfer ES6 to ES5</div>
+<div>=&gt;Babel can transfer React JSX</div>
+<div>=&gt;Babel can not bundle any files</div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Browserify</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;Browserify is designed for bundling Node packages for browser.</div>
+<div>=&gt;It doesn’t designed to support for CSS, images and fonts. </div>
+<div>=&gt;We can use plugins to make browserify to support css. images and fonts, but it is not encouraged. </div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Web pack</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;web pack is a tool that takes javascript modules with dependencies and transfer them into files</div>
+<div>=&gt;How does web pack handle css and images since it only takes in javascript?</div>
+<div>=&gt;Use loaders</div>
+<div>=&gt;loader can take in anything and output anything, meaning it can takes in CSS and output javascript. </div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Grunt</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;Grunt is a tool to run task that we defined. </div>
+<div>=&gt;Grunt task is defined by configuration object which are defined decoratively. </div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>Gulp</div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div>=&gt;Like grunt, it is a tool to define and run tasks. </div>
+<div>=&gt;gulp defines tasks by plain old functions. </div>
+<div><a href="http://jamesknelson.com/webpack-made-simple-build-es6-less-with-autorefresh-in-26-lines/" rev="en_rl_small">http://jamesknelson.com/webpack-made-simple-build-es6-less-with-autorefresh-in-26-lines/</a></div>
+</td>
+</tr>
+<tr>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+<td style="border-style:solid;border-width:1px;border-color:rgb(219,219,219);padding:10px;margin:0px;width:50%;">
+<div><br/></div>
+</td>
+</tr>
+</table>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+</body></html>
