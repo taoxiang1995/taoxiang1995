@@ -25,6 +25,7 @@
 }
 
 .tutorialBtn{
-  border-color: white !important;
+  border-color: #3498db !important;
   background-color: rgba(0,0,0,0.1) !important;
+  border-width: 1.5px;
 }
