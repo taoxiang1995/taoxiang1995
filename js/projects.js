@@ -64,6 +64,42 @@ var selectedSectionClass='';
 var currentSectionTabClass='.ProjectsTab';
 var currentSectionClass='.Projects';
 
+
+// var querystring = window.location.querystring;
+// var myValue = querystring["Use_Id"];
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+if (getParameterByName('sectionName'))
+{
+  selectedSectionClass = '.' + getParameterByName('sectionName');
+  selectedSectionTabClassName = '.'+ getParameterByName('sectionName') + 'Tab';
+  $(currentSectionTabClass).removeClass('currentTab');
+  currentSectionTabClass = selectedSectionTabClassName;
+  $(selectedSectionTabClassName).addClass('currentTab');
+  if (selectedSectionClass == '.Experiences')
+  {
+    document.getElementById("iframe").contentWindow.focus();
+  }
+  // console.log("slectedSectionClass:",selectedSectionClass);
+//  $(currentSectionClass).addClass('navTransitionEffect');
+//  $(currentSectionClass).one($.support.transition.end,
+  //    function() {
+       $(currentSectionClass).addClass('disapper');
+       $(selectedSectionClass).removeClass('disapper');
+       $(selectedSectionClass).removeClass('navTransitionEffect');
+       currentSectionClass = selectedSectionClass;
+    //  });
+
+}
+
 $(".projectTitle").click(function(){
   console.log("!!!!");
   // console.log($(this).text());
